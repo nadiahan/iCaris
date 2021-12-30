@@ -1,0 +1,61 @@
+body {
+    background-image: url("img/bg.png");
+}
+            
+.headadmin {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+            
+.menu {
+    width: 1260px;
+    display: flex;
+    justify-content: space-between;
+}
+            
+.bookings, .vehicles, .customers, .inquiries {
+    padding-top: 10px;
+}
+            
+a:link{
+    color: white;
+    text-decoration: none;
+}
+            
+a:visited{
+    color: white;
+    text-decoration: none;
+    font-style: italic;
+}
+            
+.profile {
+    padding-top: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.addsearch{
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search {
+    margin: 20px;
+}
+
+.add {
+    margin: 20px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url("img/bg.png");
+            }
+            
+            .headadmin {
+                padding: 0;
+                margin: 0;
+                color: white;
+                font-family: Arial;
+                font-size: 25px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .menu {
+                border: 1px solid black;
+                width: 1260px;
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .bookings, .vehicles, .customers, .inquiries {
+                padding-top: 25px;
+            }
+            
+            a:link{
+                color: white;
+                text-decoration: none;
+            }
+            
+            a:visited{
+                color: white;
+                text-decoration: none;
+                font-style: italic;
+            }
+            
+            .profile {
+                padding-top: 10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="headadmin">
+            <div class="menu">
+                <a href="mainAdmin.jsp"><img src="img/iCARis logo.png" style="width:80px; height:80px"></a>
+                <div class="bookings"><a href="booking_list.jsp">Bookings</a></div>
+                <div class="vehicles"><a href="vehicle_list.jsp">Vehicles</a></div>
+                <div class="customers"><a href="customer_list.jsp">Customers</a></div>
+                <div class="inquiries"><a href="inquiry_list.jsp">Inquiries</a></div>
+                <div class="profile"><a href="admin_profile.jsp"><img src="img/profile.png" style="width:55px; height:60px"></a></div>
+            </div>
+        </div>
+    </body>
+</html>
