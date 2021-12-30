@@ -29,7 +29,7 @@
         </div>
         
         <div class="addinformation">
-            <form class="addinfo" action="svlt2" method="post">
+            <form class="addinfo" action="add_cust_form.jsp" method="post">
                 <button type="submit" class="add">Add new customer</button>
             </form>
         </div>
