@@ -24,15 +24,6 @@
             <form class="well form-horizontal bg-light text-dark" style="margin: 10px;padding:10px;" action="svlt8" method="get">
                 <fieldset>
                     <legend>New Customer Form</legend>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">ID : </label>
-                        <div class="col-md-12 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"></span>
-                                <input  name="id" placeholder="ID" class="form-control"  type="number">
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label">Name : </label>
@@ -49,7 +40,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="email" placeholder="abc@gmail.com" class="form-control"  type="text">
+                                <input  name="email" placeholder="eg: abc@gmail.com" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
@@ -58,7 +49,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="phonenum" placeholder="012-3456789" class="form-control"  type="text">
+                                <input  name="phonenum" placeholder="eg: 012-3456789" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
@@ -81,11 +72,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">IC : </label>
+                        <label class="col-md-4 control-label">IC/Passport No : </label>
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="ic" placeholder="000000-00-0000" class="form-control"  type="text">
+                                <input  name="ic" placeholder="eg: 000000-00-0000" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>

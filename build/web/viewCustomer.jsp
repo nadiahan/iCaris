@@ -37,7 +37,7 @@
             <%
                 String driver = "com.mysql.jdbc.Driver";
                 String connectionUrl = "jdbc:mysql://localhost:3306/";
-                String database = "icaris";
+                String database = "rentalproject";
                 String userid = "root";
                 String password = "";
                         
@@ -61,7 +61,7 @@
                         <p>Phone Number : <%= rs.getString("phonenum") %> </p>
                         <p>Password : <%= rs.getString("password") %> </p>
                         <p>Address : <%= rs.getString("address") %> </p>
-                        <p>IC : <%= rs.getString("ic") %> </p>
+                        <p>IC/Passport No : <%= rs.getString("ic") %> </p>
             <%
                     }
        

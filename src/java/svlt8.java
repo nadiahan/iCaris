@@ -35,7 +35,7 @@ public class svlt8 extends HttpServlet {
         String password = "";
         
         String role = "customer";
-        int id = Integer.parseInt(request.getParameter("id"));
+        //int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String phonenum = request.getParameter("phonenum");
@@ -46,17 +46,17 @@ public class svlt8 extends HttpServlet {
         try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(url+database, userid, password);
-            String sqlInsert = "insert into user values(?,?,?,?,?,?,?,?)";
+            String sqlInsert = "insert into user (role,name,email,phonenum,password,address,ic) values(?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sqlInsert);
 
-            ps.setInt(1, id);
-            ps.setString(2, role);
-            ps.setString(3, name);
-            ps.setString(4, email);
-            ps.setString(5, phonenum);
-            ps.setString(6, pass);
-            ps.setString(7, address);
-            ps.setString(8, ic);
+            //ps.setInt(1, id);
+            ps.setString(1, role);
+            ps.setString(2, name);
+            ps.setString(3, email);
+            ps.setString(4, phonenum);
+            ps.setString(5, pass);
+            ps.setString(6, address);
+            ps.setString(7, ic);
 
             ps.executeUpdate();
             

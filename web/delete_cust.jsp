@@ -1,17 +1,50 @@
-<%-- 
-    Document   : delete_cust
-    Created on : 30-Dec-2021, 22:25:06
-    Author     : Siti Najwa
---%>
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Confirmation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="admin.css">
+        <style>
+            .view {
+                width: 75%;
+                height: 100%;
+                background-color: white;
+                margin: auto;
+                border-radius: 15px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%@include file="headerAdmin.jsp" %>
+        <%
+            String userID = session.getAttribute("userID").toString();
+            
+        %>
+        <h1>Vehicle # <%= userID %></h1>
+        <div class="view">
+        <div class="container">
+            <form class="well form-horizontal" action="svlt10" method="post">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Are you sure to delete this customer info?</legend>
+            
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"></label>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary" >Confirm</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        </div>
     </body>
 </html>
