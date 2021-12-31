@@ -1,0 +1,108 @@
+body {
+    background-image: url("../img/bg.png");
+}
+
+            
+.headcustomer {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.menu {
+    width: 1260px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookingform{
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    border-radius: 15px;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+button {
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type=text], select{
+  width: 90%;
+  padding: 8px 30px;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+input[type=date], select{
+  width: 90%;
+  padding: 8px 30px;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+input[type=time], select{
+  width: 90%;
+  padding: 8px 30px;;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+
+/*
+ 
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 31, 2021, 3:46:23 PM
+    Author     : Asus
+*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 31, 2021, 9:50:23 PM
+    Author     : Asus
+*/
+
