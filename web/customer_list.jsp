@@ -1,4 +1,8 @@
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
         <title>JSP Page</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="admin.css">
     </head>
     <body>
@@ -24,7 +29,7 @@
         </div>
         
         <div class="addinformation">
-            <form class="addinfo" action="svlt2" method="post">
+            <form class="addinfo" action="add_cust_form.jsp" method="post">
                 <button type="submit" class="add">Add new customer</button>
             </form>
         </div>
@@ -36,16 +41,44 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Vehicle Model</th>
-                    <th scope="col">Pickup Date</th>
-                    <th scope="col">Return Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Extended Return Date Request</th>
-                    <th scope="col">Extension Status</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Full Address</th>
                 </tr>
             </thead>
             <tbody>
-      
+                <%
+                    String driver = "com.mysql.jdbc.Driver";
+                    String url = "jdbc:mysql://localhost:3306/";
+                    String database = "rentalproject";
+                    String userid = "root";
+                    String password = "";
+                        
+                    try {
+                        Class.forName(driver);
+                        Connection conn = DriverManager.getConnection(url+database, userid, password);
+                        String sqlselect = "select * from user where id > ?";
+                        PreparedStatement ps = conn.prepareStatement(sqlselect);
+                        ps.setInt(1, 1);
+                            
+                        ResultSet rs = ps.executeQuery();
+                        while(rs.next()){
+                        %>
+                            <tr>
+                                <th scope="row"><%= rs.getString("id") %></th>
+                                <td><%= rs.getString("name") %></td>
+                                <td><%= rs.getString("email") %></td>
+                                <td><%= rs.getString("phonenum") %></td>
+                                <td><%= rs.getString("address") %></td>
+                                <td><a href="viewCustomer.jsp?id=<%=rs.getString("id")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></td>
+                            </tr>
+                <%
+                        }
+                    }
+                    catch(Exception ex){
+                        ex.printStackTrace();
+                    }
+                %>
             </tbody>
         </table>
         </div>    
