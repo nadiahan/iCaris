@@ -1,3 +1,8 @@
+<%-- 
+    Document   : maincustomer
+    Created on : Dec 8, 2021, 11:21:35 AM
+    Author     : DR HANIM
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,16 +24,16 @@
             <input  name="returnloc" type="text">
             <br>
             Pick-up Date<br>
-            <input  name="pickupdate" type="date">
+            <input  name="pickupdate" type="text">
             <br>
             Pick-up Time<br>
-            <input  name="pickuptime" type="time">
+            <input  name="pickuptime" type="text">
             <br>
             Return Date<br>
-            <input  name="returndate" type="date">
+            <input  name="returndate" type="text">
             <br>
             Return Time<br>
-            <input  name="returntime" type="time">
+            <input  name="returntime" type="text">
             <br>
             Additional drivers?<br>
             <input  name="driver" type="text">
