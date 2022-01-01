@@ -26,7 +26,7 @@ public class processRegister extends HttpServlet {
 
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/";
-        String database = "mydatabase";
+        String database = "rentalproject";
         String userid = "root";
         String password = "";
         
