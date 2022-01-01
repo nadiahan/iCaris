@@ -5,21 +5,22 @@
         <group>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/src/java/svlt9.java</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/admin.css</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login_register/login.html</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/mainAdmin.jsp</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login/login.html</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/Customer/mainCustomer.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/headerAdmin.jsp</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/Customer/customer.css</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/delete_vehicle.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/src/java/svlt5.java</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login/register.html</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/customer/customer.css</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login_register/register.html</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login_register/login.css</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/customer/mainCustomer.jsp</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/customer/customerHeader.jsp</file>
+            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/getImage.jsp</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/login/login.css</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/add_vehicle_form.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/admin_profile.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/testGithub.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/add_booking_form.jsp</file>
-            <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/Customer/customerHeader.jsp</file>
             <file>file:/C:/Users/Asus/Documents/GitHub/iCaris/web/viewCustomer.jsp</file>
         </group>
     </open-files>
