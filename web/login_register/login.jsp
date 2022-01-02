@@ -1,4 +1,9 @@
-
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,6 +18,8 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+       
+        
         <div class="login">
   
     <form method="post">
@@ -20,7 +27,8 @@ and open the template in the editor.
         <h1>iCaris Car Rental</h1>
       <input type="text" name="u" placeholder="Username" required="required" />
         <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Login.</button>
+        <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large">Login.</button>
+        <%@include file="loginvalidator.jsp" %>
     </form>
 </div>
     </body>
