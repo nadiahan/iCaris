@@ -27,7 +27,6 @@
       }
       
       .headcustomer {
-        padding: 0;
         margin: 0;
         color: white;
         font-family: Arial;
@@ -35,8 +34,20 @@
         font-weight: bold;
         display: flex;
         justify-content: center;
+        padding-top: 10px;
        }
-       
+     
+       a:link{
+        color: white;
+        text-decoration: none;
+        }
+
+        a:visited{
+            color: white;
+            text-decoration: none;
+            font-style: italic;
+        }
+        
        .menu {
         width: 1260px;
         display: flex;
@@ -61,7 +72,7 @@
    <div class="headcustomer">
         <div class="menu">
             <a href="mainAdmin.jsp"><img src="img/iCARis logo.png" style="width:70px; height:70px"></a>
-            <div class="MyBooking"><a href="booking_list.jsp">My Booking</a></div>
+            <div class="MyBooking"><a href="#">My Booking</a></div>
             <div class="NewBooking"><a href="vehicle_list.jsp">New Booking</a></div>
             <div class="Vehicles"><a href="customer_list.jsp">Vehicles</a></div>
             <div class="inquiries"><a href="inquiry_list.jsp">Inquiries</a></div>
