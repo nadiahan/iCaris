@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+html,body{  
+    margin: 0;
+    padding: 0;
+    background: url("../img/bg.png")no-repeat;
+    background-size: cover;
+    
+}
+
+li, a, button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10% 0px;
+    background-color: transparent;
+    opacity: 0.8;
+    width: 80%;
+}
+
+.sizedbox1{
+    height: 70px;
+}
+
+.logo{
+    position: absolute;
+    top:10px;
+    
+}
+
+.logout-button{
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.logout-button:hover{
+    
+    opacity: 0.8;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0px 80px;
+    
+}
+
+.nav-links li {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+/*    color: #08689f;*/
+    border-bottom: 1px solid white;
+}
+
+.bookingform{
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    height: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(8, 104, 159, 0.6);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    
+}
+
+.login-button {
+  
+  background-color: #08689f;
+  color: white;
+  padding: 8px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  
+  
+}
+
+.login-button:hover {
+ box-shadow: 0 4px 8px 0 rgba(8, 104, 159, 0.6);
+}
+
+input{
+    width: 70%;
+    
+}
+
+input[type=text], select{
+  
+  
+  padding: 8px 30px;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+input[type=date], select{
+  
+  
+  padding: 8px 30px;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+input[type=time], select{
+  
+  
+  padding: 8px 30px;;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+

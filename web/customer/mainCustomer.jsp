@@ -4,17 +4,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="customer.css">
+        <link rel="stylesheet" href="customer_styles.css">
     </head>
     <body>
         <%@include file="customerHeader.jsp" %>
+        <div class="sizedbox1"></div>
         
         
         <form class="bookingform" action="svlt3" method="get">
             <h1>Hello <%= request.getParameter("email") %> </h1>
 <!--            <b>Book a car now</b>-->
             <br>
-            <i>Pick-up Location</i>
+            Pick-up Location<br>
             <input  name="pickuploc" type="text">
             <br>
             Return Location<br>
@@ -35,7 +36,7 @@
             Additional drivers?<br>
             <input  name="driver" type="text">
             <br>
-            <button name="login" type="submit">Submit</button>
+            <button class="login-button" name="login" type="submit">Submit</button>
         </form>
         
     </body>
