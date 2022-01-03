@@ -7,6 +7,7 @@
 <%! 
             String userdbName;
             String userdbPsw;
+            String userdbType;
         %>
 
 <%
@@ -24,6 +25,9 @@
                         
                         String name = request.getParameter("u");
                         String pwd = request.getParameter("p");
+                        //String ut = "customer";
+             //           String ut2 = "customer";
+                        
                       
                         try{
                         //    out.println (name + pwd);
@@ -35,6 +39,7 @@
                            // out.println (name + pwd);
                             ps.setString(1, name);
                             ps.setString(2, pwd);
+//                            ps.setString(3, ut);
                            // out.println (name + pwd);
                             
                             rs = ps.executeQuery();
@@ -44,13 +49,25 @@
                             if(rs.next()){
                                 userdbName = rs.getString("email");
                                 userdbPsw = rs.getString("password");
-                                //out.println (name + pwd);
+                                userdbType = rs.getString("userType");
+                                //out.println (name + pwd + ut);
                                 
                                 if(name.equals(userdbName) && pwd.equals(userdbPsw))
                                 {
                                     session.setAttribute("name",userdbName);
+                                   // out.println (name + pwd);
+                                   
+                                   if (userdbType.equals("customer"))
                                     response.sendRedirect("../customer/mainCustomer.jsp");
+                                   
+                                   else
+                                    response.sendRedirect("../mainAdmin.jsp");
                                 }
+//else
+//                                {
+//                                    session.setAttribute("name",userdbName);
+//                                    response.sendRedirect("../customer/mainCustomer.jsp");
+//                                }
                             }else {
                                    // response.sendRedirect("error.jsp");// problem
                                     rs.close();
