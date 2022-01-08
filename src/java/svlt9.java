@@ -23,12 +23,14 @@ public class svlt9 extends HttpServlet {
             HttpSession session = request.getSession();
             int userID = Integer.parseInt(session.getAttribute("userID").toString());
             //session.setAttribute("userID",userID);
-            String name = request.getParameter("name");
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
             String email = request.getParameter("email");
-            String phonenum = request.getParameter("phonenum");
+            String phone = request.getParameter("phone");
             String pass = request.getParameter("password");
             String address = request.getParameter("address");
-            String ic = request.getParameter("ic");
+            String nric = request.getParameter("nric");
+            String driveclass = request.getParameter("driveclass");
         
             //work on database part
             String driver = "com.mysql.jdbc.Driver";
@@ -43,15 +45,19 @@ public class svlt9 extends HttpServlet {
                
                 //prepared statement 
                 
-                String sqlupdate = "update user set name=?, email=?, phonenum=?, password=?, address=?, ic=? where id=?";
+                String sqlupdate = "update users set "
+                        + "fname=?, lname=?, email=?, phone=?, password=?, address=?, nric=?, driveclass=? "
+                        + "where userID=?";
                 PreparedStatement ps = conn.prepareStatement(sqlupdate);
-                ps.setString(1, name);
-                ps.setString(2, email);
-                ps.setString(3, phonenum);
-                ps.setString(4, pass);
-                ps.setString(5, address);
-                ps.setString(6, ic);
-                ps.setInt(7, userID);
+                ps.setString(1, fname);
+                ps.setString(2, lname);
+                ps.setString(3, email);
+                ps.setString(4, phone);
+                ps.setString(5, pass);
+                ps.setString(6, address);
+                ps.setString(7, nric);
+                ps.setString(8, driveclass);
+                ps.setInt(9, userID);
                 
                 ps.executeUpdate();
                 
