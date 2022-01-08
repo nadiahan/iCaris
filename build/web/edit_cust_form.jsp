@@ -45,7 +45,7 @@
                             Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
 
                             //prepared statement
-                            String sqlselect = "select * from users where userID=?";
+                            String sqlselect = "select * from user where id=?";
                             PreparedStatement ps = conn.prepareStatement(sqlselect);
                             ps.setString(1, userID);
                             ResultSet rs = ps.executeQuery();
@@ -56,21 +56,11 @@
                     <h2 style='text-align:center'>UserID # <%= userID %></h2>
                     <hr class="mb-6">
                     <div class="form-group">
-                        <label class="col-md-4 control-label" >First Name</label> 
+                        <label class="col-md-4 control-label" >Name</label> 
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="fname" value="<%= rs.getString("fname")%>" class="form-control"  type="text">
-                            </div>
-                        </div>
-                    </div>
-                            
-                   <div class="form-group">
-                        <label class="col-md-4 control-label" >Last Name</label> 
-                        <div class="col-md-10 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"></span>
-                                <input name="lname" value="<%= rs.getString("lname")%>" class="form-control"  type="text">
+                                <input name="name" value="<%= rs.getString("name")%>" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
@@ -84,33 +74,23 @@
                             </div>
                         </div>
                     </div>
-                            
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Password</label>  
-                        <div class="col-md-10 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"></span>
-                                <input name="password" value="<%= rs.getString("password")%>" class="form-control"  type="text">
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" >Phone Number</label> 
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="phone" value="<%= rs.getString("phone")%>" class="form-control"  type="text">
+                                <input name="phonenum" value="<%= rs.getString("phonenum")%>" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
-                            
+
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Drive Class : </label>
-                        <div class="col-md-12 inputGroupContainer">
+                        <label class="col-md-4 control-label">Password</label>  
+                        <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="driveclass" value="<%= rs.getString("driveclass")%>" class="form-control"  type="text">
+                                <input name="password" value="<%= rs.getString("password")%>" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
@@ -130,7 +110,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="nric" value="<%= rs.getInt("nric")%>" class="form-control" type="text">
+                                <input name="ic" value="<%= rs.getInt("ic")%>" class="form-control" type="text">
                             </div>
                         </div>
                     </div>

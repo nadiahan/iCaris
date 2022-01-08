@@ -22,8 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/svlt8"})
 public class svlt8 extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
@@ -35,35 +34,29 @@ public class svlt8 extends HttpServlet {
         String userid = "root";
         String password = "";
         
-        String userType = "customer";
+        String role = "customer";
         //int id = Integer.parseInt(request.getParameter("id"));
-        String fname = request.getParameter("fname");
-        String lname = request.getParameter("lname");
+        String name = request.getParameter("name");
         String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
+        String phonenum = request.getParameter("phonenum");
         String pass = request.getParameter("password");
         String address = request.getParameter("address");
-        String nric = request.getParameter("nric");
-        String driveclass = request.getParameter("driveclass");
+        String ic = request.getParameter("ic");
         
         try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection(url+database, userid, password);
-            String sqlInsert = "insert into users "
-                    + "(userType,fname,lname,email,phone,password,address,nric,driveclass) "
-                    + "values(?,?,?,?,?,?,?,?,?)";
+            String sqlInsert = "insert into user (role,name,email,phonenum,password,address,ic) values(?,?,?,?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sqlInsert);
 
             //ps.setInt(1, id);
-            ps.setString(1, userType);
-            ps.setString(2, fname);
-            ps.setString(3, lname);
-            ps.setString(4, email);
-            ps.setString(5, phone);
-            ps.setString(6, pass);
-            ps.setString(7, address);
-            ps.setString(8, nric);
-            ps.setString(9, driveclass);
+            ps.setString(1, role);
+            ps.setString(2, name);
+            ps.setString(3, email);
+            ps.setString(4, phonenum);
+            ps.setString(5, pass);
+            ps.setString(6, address);
+            ps.setString(7, ic);
 
             ps.executeUpdate();
             

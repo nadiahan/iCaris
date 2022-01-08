@@ -35,7 +35,7 @@ public class svlt10 extends HttpServlet {
                
                 //prepared statement 
                 
-                String sqlupdate = "delete from users where userID=?";
+                String sqlupdate = "delete from user where id=?";
                 PreparedStatement ps = conn.prepareStatement(sqlupdate);
                 ps.setInt(1, userID);
                 ps.executeUpdate();
