@@ -57,20 +57,20 @@
                     try {
                         Class.forName(driver);
                         Connection conn = DriverManager.getConnection(url+database, userid, password);
-                        String sqlselect = "select * from user where id > ?";
+                        String sqlselect = "select * from users where userType = ?";
                         PreparedStatement ps = conn.prepareStatement(sqlselect);
-                        ps.setInt(1, 1);
+                        ps.setString(1, "customer");
                             
                         ResultSet rs = ps.executeQuery();
                         while(rs.next()){
                         %>
                             <tr>
-                                <th scope="row"><%= rs.getString("id") %></th>
-                                <td><%= rs.getString("name") %></td>
+                                <th scope="row"><%= rs.getInt("userID") %></th>
+                                <td><%= rs.getString("fname") +" "+ rs.getString("lname") %></td>
                                 <td><%= rs.getString("email") %></td>
-                                <td><%= rs.getString("phonenum") %></td>
+                                <td><%= rs.getString("phone") %></td>
                                 <td><%= rs.getString("address") %></td>
-                                <td><a href="viewCustomer.jsp?id=<%=rs.getString("id")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></td>
+                                <td><a href="viewCustomer.jsp?userID=<%=rs.getInt("userID")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></td>
                             </tr>
                 <%
                         }
