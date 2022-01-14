@@ -26,11 +26,21 @@
                     <legend>New Customer Form</legend>
 
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Name : </label>
+                        <label class="col-md-4 control-label">First Name : </label>
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="name" placeholder="Name" class="form-control"  type="text">
+                                <input  name="fname" placeholder="First Name" class="form-control"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Last Name : </label>
+                        <div class="col-md-12 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"></span>
+                                <input  name="lname" placeholder="Last Name" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
@@ -44,15 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-12 control-label">Phone Number : </label>
-                        <div class="col-md-12 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"></span>
-                                <input  name="phonenum" placeholder="eg: 012-3456789" class="form-control"  type="text">
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="form-group">
                         <label class="col-md-4 control-label">Password : </label>
                         <div class="col-md-12 inputGroupContainer">
@@ -62,6 +64,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-12 control-label">Phone Number : </label>
+                        <div class="col-md-12 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"></span>
+                                <input  name="phone" placeholder="eg: 0123456789" class="form-control"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Drive Class : </label>
+                        <div class="col-md-12 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"></span>
+                                <input  name="driveclass" placeholder="eg: DA" class="form-control"  type="text">
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <label class="col-md-4 control-label">Address : </label>
                         <div class="col-md-12 inputGroupContainer">
@@ -71,15 +94,17 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="form-group">
                         <label class="col-md-4 control-label">IC/Passport No : </label>
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="ic" placeholder="eg: 000000-00-0000" class="form-control"  type="text">
+                                <input  name="nric" placeholder="eg: 981010031234" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>
+                    
                     <div class="form-row">
                         <label class="col-md-5 control-label"></label>
                         <div class="col-md-4">

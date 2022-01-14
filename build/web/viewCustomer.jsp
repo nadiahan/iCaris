@@ -27,7 +27,7 @@
     <body>
         <%@include file="headerAdmin.jsp" %>
         <%
-            String userID = request.getParameter("id");
+            String userID = request.getParameter("userID");
             //String vehicleID = session.getAttribute("vehicleID").toString();
             
         %>
@@ -46,7 +46,7 @@
                     Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
                            
                     //prepared statement
-                    String sqlselect = "select * from user where id=?";
+                    String sqlselect = "select * from users where userID=?";
                     PreparedStatement ps = conn.prepareStatement(sqlselect);
                     ps.setString(1, userID);
                     ResultSet rs = ps.executeQuery();
@@ -56,12 +56,14 @@
             %>
                         <h2 style='text-align:center'>UserID # <%= userID %></h2>
                         <hr class="mb-6">
-                        <p>Full Name : <%= rs.getString("name") %> </p>
+                        <p>Full Name : <%= rs.getString("fname") %> </p>
+                        <p>Last Name : <%= rs.getString("lname") %> </p>
                         <p>Email : <%= rs.getString("email") %> </p>
-                        <p>Phone Number : <%= rs.getString("phonenum") %> </p>
                         <p>Password : <%= rs.getString("password") %> </p>
+                        <p>Phone Number : <%= rs.getString("phone") %> </p>
+                        <p>Drive Class : <%= rs.getString("driveclass") %> </p>
                         <p>Address : <%= rs.getString("address") %> </p>
-                        <p>IC/Passport No : <%= rs.getString("ic") %> </p>
+                        <p>IC/Passport No : <%= rs.getString("nric") %> </p>
             <%
                     }
        
