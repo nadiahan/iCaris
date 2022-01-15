@@ -48,6 +48,7 @@
                     <th scope="col">Status</th>
                     <th scope="col">Extended Return Date Request</th>
                     <th scope="col">Extension Status</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
@@ -72,14 +73,15 @@
                                 
                             %>    
                     <tr>
-                        <th scope="row"><a href="viewBooking.jsp?bookingID=<%=rs.getString("bookingID")%>"><%=rs.getString("bookingID")%></th>
-                        <td> <a href="viewBooking.jsp?bookingID=<%=rs.getString("bookingID")%>"><%= rs.getString("vehicleID") %> </td>
+                        <th scope="row"> <%=rs.getString("bookingID")%></th>
+                        <td> <%= rs.getString("vehicleID") %> </td>
                         <td> <%= rs.getString("bookDate") %> </td>
                         <td> <%= rs.getString("pickupDate") %> </td>
                         <td> <%= rs.getString("returnDate") %> </td>
                         <td> <%= rs.getString("status") %> </td>
                         <td> <%= rs.getString("extendReturnDate") %> </td>
                         <td> <%= rs.getString("extendStatus") %> </td>
+                        <th scope="row"> <a href="viewBooking.jsp?bookingID=<%=rs.getString("bookingID")%>"> > </th>
                     </tr>
                             <%
                             }

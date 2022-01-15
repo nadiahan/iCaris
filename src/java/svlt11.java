@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = {"/svlt3"})
-public class svlt3 extends HttpServlet {
+@WebServlet(urlPatterns = {"/svlt11"})
+public class svlt11 extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           //fetch data
+          //fetch data
             HttpSession session = request.getSession();
-            int bookingID = Integer.parseInt(session.getAttribute("bookingID").toString());
+            int inquiryID = Integer.parseInt(session.getAttribute("inquiryID").toString());
             
             //work on database part
             String driver = "com.mysql.jdbc.Driver";
@@ -35,14 +35,14 @@ public class svlt3 extends HttpServlet {
                
                 //prepared statement 
                 
-                String sqlupdate = "delete from booking where bookingID=?";
+                String sqlupdate = "delete from inquiry where inquiryID=?";
                 PreparedStatement ps = conn.prepareStatement(sqlupdate);
-                ps.setInt(1, bookingID);
+                ps.setInt(1, inquiryID);
                 ps.executeUpdate();
                 
                 log(sqlupdate);
             
-                response.sendRedirect("booking_list.jsp");
+                response.sendRedirect("inquiry_list.jsp");
             }
             
             catch(Exception ex){
