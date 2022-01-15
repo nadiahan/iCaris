@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
 }
             
-.bookings, .vehicles, .customers, .inquiries {
+.bookings, .vehicles, .customers, .inquiries, .profile, .logout {
     padding-top: 10px;
 }
             
@@ -32,10 +32,6 @@ a:visited{
     color: white;
     text-decoration: none;
     font-style: italic;
-}
-            
-.profile {
-    padding-top: 10px;
 }
 
 h1 {

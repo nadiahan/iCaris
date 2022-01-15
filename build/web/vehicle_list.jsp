@@ -45,6 +45,7 @@
                     <th scope="col">Price (RM)</th>
                     <th scope="col">RoadTax Expiry Date</th>
                     <th scope="col">Image</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
         
@@ -70,13 +71,14 @@
                                 
                             %>    
                     <tr>
-                        <th scope="row"><a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"><%=rs.getString("vehicleID")%></th>
-                        <td> <a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"><%= rs.getString("model") %> </td>
+                        <th scope="row"> <%=rs.getString("vehicleID")%></th>
+                        <td> <%= rs.getString("model") %> </td>
                         <td> <%= rs.getString("vehicleNo") %> </td>
                         <td> <%= rs.getString("transmission") %> </td>
                         <td> <%= rs.getInt("price") %> </td>
                         <td> <%= rs.getString("rdTaxExpiry") %> </td>
                         <td> <%= rs.getBlob("image") %> </td>
+                        <th scope="row"> <a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> > </th>
                     </tr>
                             <%
                             }

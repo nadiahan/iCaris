@@ -1,5 +1,9 @@
 
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,15 +34,53 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Title</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Customer ID</th>
+                    <th scope="col">title</th>
                     <th scope="col">Date</th>
                     <th scope="col">Status</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
-      
-            </tbody>
+                    <%
+                        String driver = "com.mysql.jdbc.Driver";
+                        String connectionUrl = "jdbc:mysql://localhost:3306/";
+                        String database = "rentalproject";
+                        String userid = "root";
+                        String password = "";
+                        
+                        try {
+                            Class.forName(driver);
+                            Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
+                           
+                            //prepared statement
+                            String sqlselect = "select * from inquiry";
+                            PreparedStatement ps = conn.prepareStatement(sqlselect);
+   
+                            ResultSet rs = ps.executeQuery();
+                            
+                            while(rs.next()){
+                                
+                            %>    
+                    <tr>
+                        <th scope="row"> <%=rs.getString("inquiryID")%></th>
+                        <td> <%= rs.getString("userID") %> </td>
+                        <td> <%= rs.getString("title") %> </td>
+                        <td> <%= rs.getString("date") %> </td>
+                        <td> <%= rs.getString("status") %> </td>
+                        <th scope="row"> <a href="viewInquiry.jsp?inquiryID=<%=rs.getString("inquiryID")%>"> > </th>
+                    </tr>
+                            <%
+                            }
+       
+                        }
+                        catch(Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    %>
+                   
+                </tbody>
         </table>
         </div>    
         
