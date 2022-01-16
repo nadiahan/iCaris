@@ -16,12 +16,28 @@
             .view {
                 width: 75%;
                 height: 100%;
-                background-color: white;
+                background-color: transparent;
                 margin: auto;
+                border: solid;
+                border-color: white;
+                border-width: 2px;
                 border-radius: 15px;
             }
             .info {
                 padding: 20px;
+            }
+            .inq {
+                width: 100%;
+                padding: 10px;
+                background-color: white;
+                border-radius: 15px;
+            }
+            .mess {
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: white;
+                border-radius: 15px;
             }
         </style>
     </head>
@@ -54,12 +70,15 @@
                     while(rs.next()){
                                 
             %>
-                        <p><b>From  </b></p>
-                        <p>Customer ID : <%= rs.getString("userID") %> </p>
-                        <p>Customer Name : <%= rs.getString("fname") %> <%= rs.getString("lname") %> </p>
-                        <p>Date : <%= rs.getString("date") %> </p>
-                        <p>Title : <%= rs.getString("title") %> </p>
-                        <p>Message : <%= rs.getString("message") %> </p>
+                        <div class="inq">
+                            <p> <%= rs.getString("date") %> </p>
+                            <p><b>From : </b> <%= rs.getString("fname") %> <%= rs.getString("lname") %> </p>
+                            <p><b>Title :</b> <%= rs.getString("title") %> </p>
+                        </div>
+                        <div class="mess"
+                            <p> <%= rs.getString("message") %> </p>
+                        </div>
+                        
             <%
                     }
        
@@ -68,6 +87,35 @@
                     ex.printStackTrace();
                 }
             %>
+            
+            <%
+                try {
+                    Class.forName(driver);
+                    Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
+    
+                    //prepared statement
+                    String sqlselect = "select * from reply where inquiryID=?";
+                    PreparedStatement ps = conn.prepareStatement(sqlselect);
+                    ps.setString(1, inquiryID);
+                    ResultSet rs = ps.executeQuery();
+                            
+                    while(rs.next()){
+                        //int admin = 1001 ;
+                        //int user = rs.getInt("userID");
+                        //if(user.equals("admin")) 
+            %>
+                        <div class="mess"
+                            <p> <%= rs.getString("message") %> </p>
+                        </div>
+             <%
+                    }
+       
+                }
+                catch(Exception ex) {
+                    ex.printStackTrace();
+                }
+            %>
+            
             <%
                 session.setAttribute("inquiryID",inquiryID);
             %>
