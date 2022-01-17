@@ -15,13 +15,39 @@
             form{
                 border-radius: 5%;
                 box-shadow: 5px 10px 8px black;
+                margin: 10px;
+                padding: 10px;
             }
         </style>
+        <script>
+            function validate()
+            {
+                if(validateEmail() === false)
+                  {
+                    return false;
+                  }
+                 return( true );
+            }
+            function validateEmail()
+            {
+
+                var emailID = document.form.email.value;
+                atpos = emailID.indexOf("@");
+                dotpos = emailID.lastIndexOf(".");
+                if (atpos < 1 || ( dotpos - atpos < 2 ))
+                {
+                   alert("Please enter correct email ID")
+
+                   return false;
+                }
+            return( true );
+            }
+    </script>
     </head>
     <body>
         <%@include file="headerAdmin.jsp" %>
         <div class="container col-md-5">
-            <form class="well form-horizontal bg-light text-dark" style="margin: 10px;padding:10px;" action="svlt8" method="get">
+            <form class="well form-horizontal bg-light text-dark" name="form" onsubmit="return(validate());" action="svlt8" method="get">
                 <fieldset>
                     <legend>New Customer Form</legend>
 
@@ -30,7 +56,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="fname" placeholder="First Name" class="form-control"  type="text">
+                                <input  name="fname" placeholder="First Name" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -40,7 +66,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="lname" placeholder="Last Name" class="form-control"  type="text">
+                                <input  name="lname" placeholder="Last Name" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -50,7 +76,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="email" placeholder="eg: abc@gmail.com" class="form-control"  type="text">
+                                <input  name="email" placeholder="eg: abc@gmail.com" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -60,7 +86,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="password" placeholder="Password" class="form-control"  type="text">
+                                <input  name="password" placeholder="Password" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -70,7 +96,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="phone" placeholder="eg: 0123456789" class="form-control"  type="text">
+                                <input  name="phone" placeholder="eg: 0123456789" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -80,7 +106,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="driveclass" placeholder="eg: DA" class="form-control"  type="text">
+                                <input  name="driveclass" placeholder="eg: DA" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -90,7 +116,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="address" placeholder="Address" class="form-control"  type="text">
+                                <input  name="address" placeholder="Address" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -100,7 +126,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="nric" placeholder="eg: 981010031234" class="form-control"  type="text">
+                                <input  name="nric" placeholder="eg: 981010031234" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>

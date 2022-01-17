@@ -20,7 +20,7 @@
         
         <div class="addsearch">
         <div class="searchinformation">
-            <form class="searchinfo" action="svlt1" method="post">
+            <form class="searchinfo" action="search_cust.jsp" method="post">
                 <div class="search">
                     <input name="searchinfo" type="text">
                     <button type="submit" class="submit">Search</button>
