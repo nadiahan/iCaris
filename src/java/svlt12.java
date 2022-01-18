@@ -23,10 +23,11 @@ public class svlt12 extends HttpServlet {
           
             HttpSession session = request.getSession();
             int inquiryID = Integer.parseInt(session.getAttribute("inquiryID").toString());
-            String message = request.getParameter("message");
+            String message = request.getParameter("reply");
             int userID = 1001;
             //String date = LocalDate.now().toString();
             String date = "2022-01-16";
+            String status = "replied";
             
             String driver = "com.mysql.jdbc.Driver";
             String connectionUrl = "jdbc:mysql://localhost:3306/";
@@ -46,6 +47,12 @@ public class svlt12 extends HttpServlet {
                 ps.setString(4, date);
                
                 ps.executeUpdate();
+                
+                String sqlinsert2 = "update inquiry set status=? where inquiryID=?";
+                PreparedStatement ps2 = conn.prepareStatement(sqlinsert2);
+                ps2.setString(1, status);
+                ps2.setInt(2, inquiryID);
+                ps2.executeUpdate();
                 
                 log(sqlinsert);
             

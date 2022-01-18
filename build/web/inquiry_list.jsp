@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
         <title>JSP Page</title>
         <link rel="stylesheet" href="admin.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
         <%@include file="headerAdmin.jsp" %>
@@ -36,7 +37,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Customer ID</th>
-                    <th scope="col">title</th>
+                    <th scope="col">Title</th>
                     <th scope="col">Date</th>
                     <th scope="col">Status</th>
                     <th scope="col"> </th>
@@ -69,7 +70,7 @@
                         <td> <%= rs.getString("title") %> </td>
                         <td> <%= rs.getString("date") %> </td>
                         <td> <%= rs.getString("status") %> </td>
-                        <th scope="row"> <a href="viewInquiry.jsp?inquiryID=<%=rs.getString("inquiryID")%>"> > </th>
+                        <th scope="row"> <a href="viewInquiry.jsp?inquiryID=<%=rs.getString("inquiryID")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></th>
                     </tr>
                             <%
                             }

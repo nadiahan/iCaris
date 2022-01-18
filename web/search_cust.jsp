@@ -1,3 +1,8 @@
+<%-- 
+    Document   : search_cust
+    Created on : 15-Jan-2022, 16:06:07
+    Author     : Siti Najwa
+--%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -8,19 +13,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Customer</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-        <title>JSP Page</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="admin.css">
     </head>
     <body>
         <%@include file="headerAdmin.jsp" %>
-        <h1>Customer List Page</h1>
-        
         <div class="addsearch">
         <div class="searchinformation">
-            <form class="searchinfo" action="search_cust.jsp" method="post">
+            <form class="searchinfo" action="search_cust.jsp">
                 <div class="search">
                     <input name="searchinfo" type="text">
                     <button type="submit" class="submit">Search</button>
@@ -53,19 +55,22 @@
                     String database = "rentalproject";
                     String userid = "root";
                     String password = "";
+                    String searchStr = request.getParameter("searchinfo");
                         
                     try {
                         Class.forName(driver);
                         Connection conn = DriverManager.getConnection(url+database, userid, password);
-                        String sqlselect = "select * from users where userType = ?";
+                        String sqlselect = "select * from users where fname=? or lname=? or userID=?";
                         PreparedStatement ps = conn.prepareStatement(sqlselect);
-                        ps.setString(1, "customer");
+                        ps.setString(1, searchStr);
+                        ps.setString(2, searchStr);
+                        ps.setString(3, searchStr);
                             
                         ResultSet rs = ps.executeQuery();
                         while(rs.next()){
                         %>
                             <tr>
-                                <th scope="row"><%= rs.getInt("userID") %></th>
+                                <th scope="row"><%= rs.getString("userID") %></th>
                                 <td><%= rs.getString("fname") +" "+ rs.getString("lname") %></td>
                                 <td><%= rs.getString("email") %></td>
                                 <td><%= rs.getString("phone") %></td>
@@ -82,6 +87,5 @@
             </tbody>
         </table>
         </div>    
-        
     </body>
 </html>
