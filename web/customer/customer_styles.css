@@ -23,7 +23,7 @@ header{
     align-items: center;
     padding: 30px 10% 0px;
     background-color: transparent;
-    opacity: 0.8;
+   
     width: 80%;
 }
 
@@ -146,3 +146,16 @@ input[type=time], select{
   
 }
 
+/*input[type=button]{
+  
+  
+  padding: 8px 30px;;
+  margin: 10px 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+*/

@@ -14,9 +14,11 @@
             String _lname;
             String _password;
             String _nric;
+            String _email;
             String _driveclass;
             String _phone;
             String _address;
+
         %>
 
 <%
@@ -59,34 +61,15 @@
                                 userdbName = rs.getString("email");
                                 userdbPsw = rs.getString("password");
                                 userdbType = rs.getString("userType");
-                                
-                                _userid = rs.getString ("userID");
-                                _fname = rs.getString ("fname");
-                                _lname = rs.getString ("lname");
-                                _password = rs.getString ("password");
-                                _nric = rs.getString ("nric");
-                                _driveclass = rs.getString ("driveclass");
-                                _phone = rs.getString ("phone");
-                                _address = rs.getString ("address");
                                 //out.println (name + pwd + ut);
                                 
                                 if(name.equals(userdbName) && pwd.equals(userdbPsw))
                                 {
                                     session.setAttribute("name",userdbName);
-                                    session.setAttribute("fname",_fname);
-                                    session.setAttribute("lname",_lname);
-                                    session.setAttribute("userID",_userid);
-                                    session.setAttribute("password",_password);
-                                    session.setAttribute("nric",_nric);
-                                    session.setAttribute("driveclass",_driveclass);
-                                    session.setAttribute("phone",_phone);
-                                    session.setAttribute("address",_address);
-                                    
-                                    
                                    // out.println (name + pwd);
                                    
                                    if (userdbType.equals("customer"))
-                                    response.sendRedirect("../customer/profile.jsp");
+                                    response.sendRedirect("../customer/mainCustomer.jsp");
                                    
                                    else
                                     response.sendRedirect("../mainAdmin.jsp");
