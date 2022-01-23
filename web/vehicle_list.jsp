@@ -57,6 +57,8 @@
                         String userid = "root";
                         String password = "";
                         
+                        //String id = " ";
+                        
                         try {
                             Class.forName(driver);
                             Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
@@ -77,7 +79,7 @@
                         <td> <%= rs.getString("transmission") %> </td>
                         <td> <%= rs.getInt("price") %> </td>
                         <td> <%= rs.getString("rdTaxExpiry") %> </td>
-                        <td> <%= rs.getBlob("image") %> </td>
+                        <td> <% String id = rs.getString("vehicleID");%> </td>
                         <th scope="row"> <a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> > </th>
                     </tr>
                             <%
