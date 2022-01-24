@@ -19,7 +19,7 @@
         <%@include file="headerAdmin.jsp" %>
         <h1>Inquiry List Page</h1>
         
-        <div class="addsearch">
+<!--        <div class="addsearch">
         <div class="searchinformation">
             <form class="searchinfo" action="svlt1" method="post">
                 <div class="search">
@@ -29,7 +29,7 @@
                  </form>
         </div>
         
-        </div>
+        </div> -->
         
         <div class="container">
         <table class="table table-dark">

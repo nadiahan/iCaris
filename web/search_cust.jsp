@@ -1,8 +1,3 @@
-<%-- 
-    Document   : search_cust
-    Created on : 15-Jan-2022, 16:06:07
-    Author     : Siti Najwa
---%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>

@@ -1,4 +1,6 @@
 
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.sql.Blob"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -19,7 +21,7 @@
         
         <div class="addsearch">
         <div class="searchinformation">
-            <form class="searchinfo" action="svlt3" method="post">
+            <form class="searchinfo" action="search_vehicle.jsp" method="post">
                 <div class="search">
                     <input name="searchinfo" type="text">
                     <button type="submit" class="submit">Search</button>
@@ -39,13 +41,13 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Brand</th>
                     <th scope="col">Vehicle Model</th>
                     <th scope="col">Registration No</th>
                     <th scope="col">Transmission</th>
                     <th scope="col">Price (RM)</th>
                     <th scope="col">RoadTax Expiry Date</th>
-                    <th scope="col">Image</th>
-                    <th scope="col"></th>
+                    <th scope="col">View</th>
                 </tr>
             </thead>
         
@@ -56,6 +58,8 @@
                         String database = "rentalproject";
                         String userid = "root";
                         String password = "";
+                        
+                        //String id = " ";
                         
                         try {
                             Class.forName(driver);
@@ -72,12 +76,12 @@
                             %>    
                     <tr>
                         <th scope="row"> <%=rs.getString("vehicleID")%></th>
+                        <td> <%= rs.getString("brand") %> </td>
                         <td> <%= rs.getString("model") %> </td>
                         <td> <%= rs.getString("vehicleNo") %> </td>
                         <td> <%= rs.getString("transmission") %> </td>
                         <td> <%= rs.getInt("price") %> </td>
                         <td> <%= rs.getString("rdTaxExpiry") %> </td>
-                        <td> <%= rs.getBlob("image") %> </td>
                         <th scope="row"> <a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> > </th>
                     </tr>
                             <%
