@@ -66,6 +66,7 @@
                         <p>Rental price : RM <%= rs.getString("price") %> </p>
                         <p>Age : <%= rs.getString("age") %> </p>
                         <p>Road Tax expiry date : <%= rs.getString("rdTaxExpiry") %> </p>
+                        <p> <a href="view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> <img src="img/photo-camera.png" style="width:50px; height:50px"> </a> </p>
             <%
                     }
        

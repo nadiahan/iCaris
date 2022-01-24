@@ -6,9 +6,8 @@
 <%@page import="java.sql.Connection"%>
 <%
 
-String id = "3"; //tukar id sini utk display gmbar lain
-Connection con = null;
-
+    String vehicleID = request.getParameter("vehicleID");
+    
     String driver = "com.mysql.jdbc.Driver";
     String connectionUrl = "jdbc:mysql://localhost:3306/";
     String database = "rentalproject";
@@ -17,10 +16,10 @@ Connection con = null;
 try {
     
     Class.forName(driver).newInstance();
-    con = DriverManager.getConnection(connectionUrl+database, userid, password);
+    Connection conn = DriverManager.getConnection(connectionUrl+database, userid, password);
     
-    PreparedStatement ps = con.prepareStatement("select image from vehicle where vehicleID=?");
-    ps.setString(1, id);
+    PreparedStatement ps = conn.prepareStatement("select image from vehicle where vehicleID=?");
+    ps.setString(1, vehicleID);
     ResultSet rs = ps.executeQuery();
  
     if(rs.next()){
@@ -36,14 +35,4 @@ try {
 catch(Exception e){
     e.printStackTrace();
 }  
-finally{
-    if(con != null){
-        try{
-            con.close();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-}
 %>
