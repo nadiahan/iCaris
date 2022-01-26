@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <style>
+
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
             html,body{  
                 margin: 0;
@@ -102,5 +103,7 @@
 
 <!--            <a href="../login_register/logout.jsp"><button class="logout-button"><img src="../img/logout-symbol.svg" alt="logo" style="width:65px; height:65px"></button></a>-->
         </header>
+
+      
     </body>
 </html>

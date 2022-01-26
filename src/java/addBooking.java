@@ -55,6 +55,12 @@ public class addBooking extends HttpServlet {
 
         //work on database part here
         try {
+            
+            session.setAttribute("pickupDate", pickupDate);
+            session.setAttribute("pickupTime", pickupTime);
+            session.setAttribute("returnDate", returnDate);
+            session.setAttribute("returnTime", returnTime);
+            
         //    out.println(fname + lname + email + pw + phone + driveclass + address + nric);
             
             Class.forName(driver).newInstance();
@@ -90,6 +96,7 @@ public class addBooking extends HttpServlet {
             conn.close();
             //response.sendRedirect("viewAll.jsp");
             
+        response.sendRedirect("customer/bookCar.jsp");
         } 
         catch (Exception ex) {
              ex.printStackTrace();
