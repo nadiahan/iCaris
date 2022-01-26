@@ -82,13 +82,14 @@
 
     </style>
   </head>
+  
   <body>
    <header>
         <a href="#"><img class="logo" src="../img/iCARis logo.png" alt="logo"style=" width:130px; height:130px"></a>
         <nav>
             <ul class="nav-links">
                 <li><a href="profile.jsp">My Profile</a></li>
-                <li><a href="booking.jsp">Bookings</a></li>
+                <li><a href="bookDateLoc.jsp">Bookings</a></li>
                 <li><a href="#">Vehicle</a></li>
                 <li><a href="#">Inquiries</a></li>
             </ul>
