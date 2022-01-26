@@ -3,12 +3,14 @@
   <head>
  
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="indexStyles.css">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
     
-    <title>Hello, world!</title>
+    <title>Index.html</title>
     <!-- Custom CSS -->
     <style>
-      h1{
+        
+/*      h1{
         color: white;
         text-align: center;
         position: absolute;
@@ -63,13 +65,13 @@
         position: absolute;
         top: 40%;
         left: 30%;
-        }
+        }*/
 
         
     </style>
   </head>
   <body>
-   <div class="headcustomer">
+<!--   <div class="headcustomer">
         <div class="menu">
             <a href="mainAdmin.jsp">&nbsp<img src="img/iCARis logo.png" style="width:70px; height:70px"></a>
             <div class="MyBooking"><a href="#">My Booking</a></div>
@@ -79,14 +81,31 @@
             <div class="profile"><a href="login_register/login.jsp" style="font-size: 15px">Login | </a> 
             <a href="login_register/register.jsp" style="font-size: 15px">Register &nbsp&nbsp&nbsp</a></div>
         </div>
-    </div>
+    </div>-->
+
+        <header>
+            <a href="#"><img class="logo" src="img/iCARis logo.png" alt="logo"style=" width:150px; height:150px"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">My Booking</a></li>
+                    <li><a href="vehicle_list.jsp">New Booking</a></li>
+                    <li><a href="customer_list.jsp">Vehicle</a></li>
+                    <li id="inquiryHeader"><a href="inquiry_list.jsp">Inquiries</a></li>
+                    <li id="loginHeader"><a href="login_register/login.jsp">Login</a></li>
+                    <li id="regHeader"><a href="login_register/register.jsp">Register</a></li>
+                    
+                </ul>
+            </nav>
+           
+
+        </header>
     <div class="container">
-      <h1>iCaris Car Rental</h1>
+      <h1 class="title">iCaris Car Rental</h1>
  
       <!-- Bootstrap Button Classes -->     
       <div class="one">
-        <a href="login_register/register.jsp" style="font-size: 60px" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Book a Car</a>
-        <a href="faq.html" style="font-size: 60px" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">FAQ</a>
+        <a href="login_register/register.jsp"  class="twinBtn bookButton" >Book a Car</a>
+        <a href="faq.html"  class="twinBtn faqButton">FAQ</a>
       </div>
        
     </div>
