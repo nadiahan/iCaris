@@ -4,7 +4,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="customer_styles.css">
+        <link rel="stylesheet" href="booking.css">
+        
     </head>
     
     <body>
@@ -49,5 +50,6 @@
             <br>
             <button class="login-button" name="login" type="submit">Submit</button>
         </form>
+<div class="sizedbox2"></div>
     </body>
 </html>

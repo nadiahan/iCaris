@@ -1,12 +1,14 @@
+
+
 .container {
-    
+
     margin: 0;
-    padding: 30px 10% 0px;
+    padding: 7% 10% 0px;
     color: #2e323c;
-    
+
     background-size: cover;
-/*    position: relative;*/
-    
+    /*    position: relative;*/
+
 }
 .account-settings .user-profile {
     margin: 0 0 1rem 0;
@@ -18,15 +20,15 @@
 }
 .account-settings .user-profile .user-avatar img {
     margin-top: 20px;
-      width:90px;
-      height:90px;
-      object-fit:cover;
-      border-radius:50%;
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:50%;
 }
 .account-settings .user-profile h5.user-name {
-/*    margin: 0 0 0.5rem 0;*/
-margin-top: 20px;
-    
+    /*    margin: 0 0 0.5rem 0;*/
+    margin-top: 20px;
+
 }
 .account-settings .user-profile h6.user-email {
     margin: 0;
@@ -35,7 +37,7 @@ margin-top: 20px;
     color: #9fa8b9;
 }
 .account-settings .about {
-/*    //margin: 2rem 0 0 0;*/
+    /*    //margin: 2rem 0 0 0;*/
     text-align: center;
 }
 .account-settings .about h5 {
