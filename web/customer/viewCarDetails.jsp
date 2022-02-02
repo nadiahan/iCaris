@@ -43,8 +43,8 @@
                             Class.forName(driver);
                             Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
                            
-                            //prepared statement
-                             
+                            //prepared statement wher   
+                            String sqlselect = "select * from vehicle where vehicleID ='"+id+"'";
                             PreparedStatement ps = conn.prepareStatement(sqlselect);
    
                             ResultSet rs = ps.executeQuery();
@@ -139,7 +139,7 @@
                 </div>
                 
                 
-                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" data-abc="true"> Book now </a>
+                <div class="bottom-wrap"> <a href="viewCarPayment.jsp?id=<%=rs.getString("vehicleID")%>" class="btn btn-primary float-right" data-abc="true"> Book now </a>
                     <div class="price-wrap"> <a href="javascript:history.back()" class="btn btn-outline-secondary float-left" data-abc="true"> Cancel </a> </div>
                 </div>
             </figure>

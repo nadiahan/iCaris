@@ -18,18 +18,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%@include file="../customer/customerHeader.jsp" %>
        
         
-        <div class="login">
-  
-    <form method="post">
-        <img src="../img/iCARis logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 45%">
-        <h1>iCaris Car Rental</h1>
-      <input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large">Login.</button>
-        <%@include file="loginvalidator.jsp" %>
-    </form>
-</div>
+        
+        
+    <div class="login"> 
+        <form class = "kotakluar" method="post">
+            <img src="../img/iCARis logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 45%">
+            <h1>iCaris Car Rental</h1>
+          <input type="text" name="u" placeholder="Username" required="required" />
+            <input type="password" name="p" placeholder="Password" required="required" />
+            <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large">Login.</button>
+            <%@include file="loginvalidator.jsp" %>
+        </form>
+    </div>
     </body>
 </html>

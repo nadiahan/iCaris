@@ -6,7 +6,9 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+import java.sql.*;
 /**
  *
  * @author Asus
@@ -42,11 +45,16 @@ public class addBooking extends HttpServlet {
         String returnLocation = request.getParameter("returnloc");
         HttpSession session=request.getSession();  
         String _userid = (String)session.getAttribute("userID");
+        
+        //set current date
+        session.setAttribute("spickupDate",pickupDate);
+        session.setAttribute("sreturnDate",returnDate);
+        
         String status = "Booked";
         //String bookingID = "10002";
         String vehicleID = "0";
-        
-        String bookDate = " ";
+        int A_ID = 0;
+        String bookDate = LocalDateTime.now().toString();
         String extendReturnDate = "";
         String extendStatus = "";
         String totalPrice = "0";
@@ -56,10 +64,6 @@ public class addBooking extends HttpServlet {
         //work on database part here
         try {
             
-            session.setAttribute("pickupDate", pickupDate);
-            session.setAttribute("pickupTime", pickupTime);
-            session.setAttribute("returnDate", returnDate);
-            session.setAttribute("returnTime", returnTime);
             
         //    out.println(fname + lname + email + pw + phone + driveclass + address + nric);
             
@@ -67,10 +71,10 @@ public class addBooking extends HttpServlet {
             Connection conn;
             conn = DriverManager.getConnection(url+database,userid,password);
            // Statement stmt = conn.createStatement();
+           
+           //Update dalam table booking dulu
             String sqlinsert = "insert into booking(userID, pickupDate, pickupTime, returnDate, returnTime, pickupLocation, returnLocation, status, vehicleID, bookDate, extendReturnDate, extendStatus, totalPrice)values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            
             PreparedStatement ps = conn.prepareStatement(sqlinsert);
-         //   InputStream is = part.getInputStream();
             
             ps.setString(1, _userid);
             ps.setString(2, pickupDate);
@@ -90,6 +94,34 @@ public class addBooking extends HttpServlet {
            
            
             ps.executeUpdate();
+            
+            // Update dalam table available
+            String sqlinsert2 = "insert into available(vehicleID, pickupDate, returnDate) values (?, ?, ?)";
+            PreparedStatement ps2 = conn.prepareStatement(sqlinsert2, Statement.RETURN_GENERATED_KEYS);
+            ps2.setString(1, vehicleID);
+            ps2.setString(2, pickupDate);
+            ps2.setString(3, returnDate);
+            ps2.executeUpdate();
+            
+          
+            ResultSet rs = ps2.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+                A_ID = rs.getInt(1);
+                 session.setAttribute("A_ID", A_ID);
+                 
+                //ps.setInt(i, mb.getUserID("UserID"));
+                }
+             // Update dalam table available
+           
+//            ResultSet rs = conn.createStatement().executeQuery(sqlselect);
+//            
+//            while (resultSet.next()){ 
+//            String ID = resultSet.getString("id");
+//            session.setAttribute("bookingID", ID);
+//            }
+         //   InputStream is = part.getInputStream();
+            
+            
                 
             log(sqlinsert);
             

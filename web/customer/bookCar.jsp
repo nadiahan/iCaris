@@ -29,8 +29,12 @@
                         String database = "rentalproject";
                         String userid = "root";
                         String password = "";
+                      //  int A_ID= Integer.parseInt(session.getAttribute("A_ID").toString());
                         
                         //String id = " ";
+                        
+                        String sreturnDate=(String)session.getAttribute("sreturnDate");
+                        String spickupDate=(String)session.getAttribute("spickupDate");
                         
                         try {
                             Class.forName(driver);
@@ -42,16 +46,30 @@
    
                             ResultSet rs = ps.executeQuery();
                             
-                            //if vehicle id == 
-                            //rs.getString ("vehicleID");
-                            while(rs.next()){
+                            String sqlselect2 = "select vehicleID from available WHERE pickupDate = '" + spickupDate  + "' AND returnDate = '" + sreturnDate  + "'  ";
+                            PreparedStatement ps2 = conn.prepareStatement(sqlselect2);
+   
+                            ResultSet rs2 = ps2.executeQuery();
+                            
+                           
+                
+                            
+                            int j = 0;
+                            
+                            String test = null;
+                            while(rs2.next()){
+                             test = rs2.getString("vehicleID");
+                                
+                                while((rs.next())&&(!(rs.getString("vehicleID").equals(test)))){
+                                
+                                
                                 
                             %>    
                 <div class="row p-2 bg-white border rounded mt-2">
                     <div class="col-md-3 mt-1">
                         <img class="img-fluid img-responsive rounded product-image"  src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>"></div>
                     <div class="col-md-6 mt-1">
-                        <h5><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model")%> </h5>
+                        <h5><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %> </h5>
                         <div class="d-flex flex-row">
                             <div class="ratings mr-2">
                                 <i class="fa fa-star"></i>
@@ -132,9 +150,10 @@
                     </div>
                 </div>
                 <%
+                            
                             }
-       
-                        }
+                       }
+}
                         catch(Exception ex) {
                             ex.printStackTrace();
                         }

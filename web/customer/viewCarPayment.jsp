@@ -54,37 +54,7 @@
                             while(rs.next()){
                                 
                             %>    
-<!--                <div class="row p-2 bg-white border rounded mt-2">
-                    <div class="col-md-3 mt-1">
-                        <img class="img-fluid img-responsive rounded product-image"  src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>"></div>
-                    <div class="col-md-6 mt-1">
-                        <h5><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model")%> </h5>
-                        <div class="d-flex flex-row">
-                            <div class="ratings mr-2">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <span><%=rs.getString("transmission")%></span>
-                        </div>
-                        <div class="mt-1 mb-1 spec-1">
-                            <span><%= rs.getString("seats") %>&nbsp;seater</span>
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-                    <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                        <div class="d-flex flex-row align-items-center">
-                            <h4 class="mr-1">RM<%=rs.getString("price")%>/day</h4>
-                        </div>
-                        <h6 class="text-success">Including Tax</h6>
-                        <div class="d-flex flex-column mt-4">
-                            <a class="btn btn-primary" href="../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>" role="button" style="margin: 5px;">Book</a>
-                            <a class="btn btn-outline-secondary" href="#" role="button" style="margin: 5px;">View Details</a>
-                        </div>
-                    </div>
-                </div>-->
-                
+
 
 
             </div>
@@ -139,7 +109,7 @@
                 </div>
                 
                 
-                <div class="bottom-wrap"> <a href="#" class="btn btn-primary float-right" data-abc="true"> Book now </a>
+                    <div class="bottom-wrap"> <a href="../processPayment?id=<%=rs.getString("vehicleID")%>" class="btn btn-primary float-right" data-abc="true"> Pay </a>
                     <div class="price-wrap"> <a href="#" class="btn btn-outline-secondary float-left" data-abc="true"> Cancel </a> </div>
                 </div>
             </figure>
