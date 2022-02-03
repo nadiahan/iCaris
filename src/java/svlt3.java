@@ -41,7 +41,25 @@ public class svlt3 extends HttpServlet {
                 ps.executeUpdate();
                 
                 log(sqlupdate);
+            }
             
+            catch(Exception ex){
+                ex.printStackTrace();
+            }
+            
+            try {
+                Class.forName(driver);
+                Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
+               
+                //prepared statement 
+                
+                String sqlupdate = "delete from available where bookingID=?";
+                PreparedStatement ps = conn.prepareStatement(sqlupdate);
+                ps.setInt(1, bookingID);
+                ps.executeUpdate();
+                
+                log(sqlupdate);
+                
                 response.sendRedirect("booking_list.jsp");
             }
             

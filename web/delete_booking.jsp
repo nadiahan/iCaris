@@ -24,10 +24,10 @@
     <body>
         <%@include file="headerAdmin.jsp" %>
         <%
-            String vehicleID = session.getAttribute("bookingID").toString();
+            String bookingID = session.getAttribute("bookingID").toString();
             
         %>
-        <h1>Vehicle # <%= vehicleID %></h1>
+        <h1>Booking # <%= bookingID %></h1>
         <div class="view">
         <div class="container">
             <form class="well form-horizontal" action="svlt3" method="post">
