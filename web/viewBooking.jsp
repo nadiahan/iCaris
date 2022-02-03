@@ -84,6 +84,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
+                            <button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_extension.jsp'">View Extension Details</button>
                             <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='edit_booking_form.jsp'">Update</button>
                             <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_booking.jsp'">Delete</button>
                         </div>

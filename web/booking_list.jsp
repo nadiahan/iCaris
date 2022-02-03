@@ -29,11 +29,11 @@
                  </form>
         </div>
         
-        <div class="addinformation">
+<!--        <div class="addinformation">
             <form class="addinfo" action="svlt2" method="post">
                 <button type="submit" class="add">Add new booking</button>
             </form>
-        </div>
+        </div>-->
         </div>
         
         <div class="container">
