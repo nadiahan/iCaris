@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
         <title>Booking List</title>
         <link rel="stylesheet" href="admin.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
     </head>
     <body>
@@ -29,11 +30,11 @@
                  </form>
         </div>
         
-        <div class="addinformation">
+<!--        <div class="addinformation">
             <form class="addinfo" action="svlt2" method="post">
                 <button type="submit" class="add">Add new booking</button>
             </form>
-        </div>
+        </div>-->
         </div>
         
         <div class="container">
@@ -81,7 +82,7 @@
                         <td> <%= rs.getString("status") %> </td>
                         <td> <%= rs.getString("extendReturnDate") %> </td>
                         <td> <%= rs.getString("extendStatus") %> </td>
-                        <th scope="row"> <a href="viewBooking.jsp?bookingID=<%=rs.getString("bookingID")%>"> > </th>
+                        <td><a href="viewBooking.jsp?bookingID=<%=rs.getString("bookingID")%>&vehicleID=<%=rs.getString("vehicleID")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></td>
                     </tr>
                             <%
                             }

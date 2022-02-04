@@ -8,16 +8,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>View Extension</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-        <title>View Booking Information</title>
         <link rel="stylesheet" href="admin.css">
         <style>
             .view {
-                width: 75%;
+                width: 50%;
                 height: 100%;
                 background-color: white;
-                margin: auto;
+                margin: 20px auto;
                 border-radius: 15px;
             }
             .info {
@@ -28,10 +28,10 @@
     <body>
         <%@include file="headerAdmin.jsp" %>
         <%
-            String bookingID = request.getParameter("bookingID");
-            String vehicleID = request.getParameter("vehicleID");
-            //String pickupDate = request.getParameter("pickupDate");
-            //String extendReturnDate = request.getParameter("extendReturnDate");
+            String bookingID = session.getAttribute("bookingID").toString();
+            String vehicleID = session.getAttribute("vehicleID").toString();
+//            String pickupDate = session.getAttribute("pickupDate").toString();
+//            String extendReturnDate = session.getAttribute("extendReturnDate").toString();
         %>
         <h1>Booking #<%= bookingID %></h1>
         <div class="view">
@@ -57,18 +57,14 @@
                                 
             %>
                         <p>Customer Name : <%= rs.getString("fname") %>  <%= rs.getString("lname") %> (<%= rs.getString("userID") %>)</p>
-                        <p>Email : <%= rs.getString("email") %> </p>
-                        <p>Phone Number : <%= rs.getString("phone") %> </p>
                         <p>Model Name : <%= rs.getString("model") %> </p>
-                        <p>Pickup Date : <%= rs.getString("pickupDate") %> </p>
-                        <p>Pickup Time : <%= rs.getString("pickupTime") %> </p>
                         <p>Return Date : <%= rs.getString("returnDate") %> </p>
                         <p>Return Time : <%= rs.getString("returnTime") %> </p>
-                        <p>Pickup Location : <%= rs.getString("pickupLocation") %> </p>
                         <p>Return Location : <%= rs.getString("returnLocation") %> </p>
-                        <p>Total Price : RM <%= rs.getString("totalPrice") %> </p>
+                        <p>Additional Price : RM <%= rs.getString("price") %> </p>
                         <p>Requested Extend Return Date  : <%= rs.getString("extendReturnDate") %> </p>
                         <p>Extension Status : <%= rs.getString("extendStatus") %> </p>
+                        <p>Total Price : RM <%= rs.getString("totalPrice") %> </p>
             <%
                     }
        
@@ -80,8 +76,9 @@
             <%
                 session.setAttribute("bookingID",bookingID);
                 session.setAttribute("vehicleID",vehicleID);
-                //session.setAttribute("pickupDate",pickupDate);
-                //session.setAttribute("extendReturnDate",extendReturnDate);
+                //session.setAttribute("vehicleID",session.getAttribute("vehicleID"));
+                //session.setAttribute("pickupDate",session.getAttribute("pickupDate"));
+                //session.setAttribute("extendReturnDate",session.getAttribute("extendReturnDate"));
             %>
             <div class="container">
                 <form class="well form-horizontal">
@@ -89,7 +86,8 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
-                            <button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_extension.jsp'">View Extension Details</button>
+                            <!--<button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_availability.jsp'">Availability</button>-->
+                            <button type="button" name="edit" class="btn btn-info"><a href="view_availability.jsp" target="blank">Availability</button>
                             <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='edit_booking_form.jsp'">Update</button>
                             <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_booking.jsp'">Delete</button>
                         </div>

@@ -26,7 +26,6 @@
         <%@include file="headerAdmin.jsp" %>
         <%
             String vehicleID = session.getAttribute("vehicleID").toString();
-            
         %>
         <h1>Vehicle # <%= vehicleID %> </h1>
         <div class="addform">
@@ -55,7 +54,7 @@
                             while(rs.next()){
                                 int year = LocalDate.now().getYear()- rs.getInt("age");
                     %>
-                    <!-- radio checks -->
+                  
                     <!-- input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" >Type (Car/Motorcycle)</label> 
