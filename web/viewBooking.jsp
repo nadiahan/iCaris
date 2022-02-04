@@ -29,9 +29,11 @@
         <%@include file="headerAdmin.jsp" %>
         <%
             String bookingID = request.getParameter("bookingID");
+            String vehicleID = request.getParameter("vehicleID");
+            //String pickupDate = request.getParameter("pickupDate");
+            //String extendReturnDate = request.getParameter("extendReturnDate");
         %>
         <h1>Booking #<%= bookingID %></h1>
-        
         <div class="view">
             <div class="info">
             <%
@@ -77,6 +79,9 @@
             %>
             <%
                 session.setAttribute("bookingID",bookingID);
+                session.setAttribute("vehicleID",vehicleID);
+                //session.setAttribute("pickupDate",pickupDate);
+                //session.setAttribute("extendReturnDate",extendReturnDate);
             %>
             <div class="container">
                 <form class="well form-horizontal">
