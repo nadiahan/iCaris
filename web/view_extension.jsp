@@ -1,4 +1,6 @@
 
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -56,15 +58,22 @@
                     while(rs.next()){
                                 
             %>
-                        <p>Customer Name : <%= rs.getString("fname") %>  <%= rs.getString("lname") %> (<%= rs.getString("userID") %>)</p>
+                        
                         <p>Model Name : <%= rs.getString("model") %> </p>
                         <p>Return Date : <%= rs.getString("returnDate") %> </p>
                         <p>Return Time : <%= rs.getString("returnTime") %> </p>
-                        <p>Return Location : <%= rs.getString("returnLocation") %> </p>
-                        <p>Additional Price : RM <%= rs.getString("price") %> </p>
                         <p>Requested Extend Return Date  : <%= rs.getString("extendReturnDate") %> </p>
                         <p>Extension Status : <%= rs.getString("extendStatus") %> </p>
-                        <p>Total Price : RM <%= rs.getString("totalPrice") %> </p>
+                        <%
+                            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("returnDate"));
+                            Date date2=new SimpleDateFormat("yyyy-MM-dd").parse(rs.getString("extendReturnDate"));
+                            
+                            int diffDays = (int) ((date2.getTime() - date1.getTime())/(1000*60*60*24));
+                            float price = rs.getFloat("price");
+                    
+                            float extendPrice = diffDays * price;
+                        %>
+                        <p>Additional Price : RM <%= extendPrice %> </p>
             <%
                     }
        
@@ -88,8 +97,8 @@
                         <div class="col-md-4">
                             <!--<button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_availability.jsp'">Availability</button>-->
                             <button type="button" name="edit" class="btn btn-info"><a href="view_availability.jsp" target="blank">Availability</button>
-                            <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='edit_booking_form.jsp'">Update</button>
-                            <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_booking.jsp'">Delete</button>
+                            <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='approve_extension.jsp'">Approve</button>
+                            <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='reject_extension.jsp'">Reject</button>
                         </div>
                     </div>
                 </fieldset>

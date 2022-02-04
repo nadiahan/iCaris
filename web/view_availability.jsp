@@ -86,55 +86,50 @@
                     ex.printStackTrace();
                 }
             %>
-            <%
-                try {
-                    Class.forName(driver);
-                    Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
-    
-                    //prepared statement
-                    String sqlselect = "select * from available where vehicleID=?";
-                    PreparedStatement ps = conn.prepareStatement(sqlselect);
-                    ps.setString(1, vehicleID);
-                    ResultSet rs = ps.executeQuery();
-                    
-                    int counter = 1;
-                    while(rs.next()){
-                        //int admin = 1001 ;
-                        //int user = rs.getInt("userID");
-                        //if(user.equals("admin")) 
-            %>
-                        <div class="mess"
-                            <p><b> <%= counter %> </b></p>
-                            <p> <%= rs.getString("pickupDate") %> </p>
-                            <p> <%= rs.getString("returnDate") %> </p>
-                        </div>
-             <%
-                    counter++;
-                    }
+            <div class="container">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Pickup Date</th>
+                            <th scope="col">Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                       
+                        try {
+                            Class.forName(driver);
+                            Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
+                           
+                            //prepared statement
+                            String sqlselect = "select * from available where vehicleID=?";
+                            PreparedStatement ps = conn.prepareStatement(sqlselect);
+                            ps.setString(1, vehicleID);
+   
+                            ResultSet rs = ps.executeQuery();
+                            
+                            while(rs.next()){
+                                int counter=1;
+                            %>    
+                        <tr>
+                            <td> <%= rs.getString("pickupDate") %> </td>
+                            <td> <%= rs.getString("returnDate") %> </td> 
+                        </tr>
+                            <%
+                            }
        
-                }
-                catch(Exception ex) {
-                    ex.printStackTrace();
-                }
-            %>
-            
+                        }
+                        catch(Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    %>
+                    </tbody>
+                </table>
+            </div>    
             <%
                 //session.setAttribute("vehicleID",vehicleID);
             %>
-            
-<!--            <div class="container">
-                <form class="well form-horizontal">
-                    <fieldset>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
-                            <div class="col-md-4">
-                                <button type="button" name="reply" class="btn btn-success" onclick="window.location.href='reply_inquiry_form.jsp'">Reply</button>
-                                <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_inquiry.jsp'">Delete</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>-->
+
         </div>
         </div>
         

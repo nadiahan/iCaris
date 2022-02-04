@@ -24,8 +24,7 @@
     <body>
         <%@include file="headerAdmin.jsp" %>
         <%
-            String vehicleID = session.getAttribute("vehicleID").toString();
-            
+            String vehicleID = session.getAttribute("vehicleID").toString();  
         %>
         <h1>Vehicle # <%= vehicleID %></h1>
         <div class="view">
