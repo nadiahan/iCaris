@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  *
  * @author Asus
@@ -57,6 +58,7 @@ public class UpdateProfile extends HttpServlet {
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
         String driveclass = request.getParameter("driveclass");
+         HttpSession session=request.getSession();  
         
         try {
             
@@ -81,16 +83,22 @@ public class UpdateProfile extends HttpServlet {
             ps.setString(7, address);
           
            
-            ps.executeUpdate();
-
-            System.out.println(fname);
-            System.out.println(id);
+            int count = ps.executeUpdate();
+//
+//            System.out.println(fname);
+//            System.out.println(id);
             log(update);
+            
+            if (count > 0){
+                System.out.println("success");
+                session.setAttribute("count", count);
+            }
             
             conn.close();
             //response.sendRedirect("viewAll.jsp");
+      
             
-        response.sendRedirect("customer/profile.jsp");
+        response.sendRedirect("customer/profile.jsp?count=count");
         } 
         catch (Exception ex) {
              ex.printStackTrace();

@@ -23,6 +23,11 @@
             String _driveclass = (String) session.getAttribute("driveclass");
             String _phone = (String) session.getAttribute("phone");
             String _address = (String) session.getAttribute("address");
+            
+            
+           // int count = (int)(session.getAttribute("count"));
+            
+            
         %> 
 
         <div class="container">

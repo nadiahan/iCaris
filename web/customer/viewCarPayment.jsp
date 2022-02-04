@@ -51,7 +51,7 @@
                         
                         String id = request.getParameter("id");
                         //int i=Integer.parseInt(request.getParameter("id"));
-                        DecimalFormat pf = new DecimalFormat("RM #0.00");
+                        DecimalFormat pf = new DecimalFormat("#0.00");
                         
                         try {
                             //int i=request.Integer.parseInt(request.getParameter("id"));  

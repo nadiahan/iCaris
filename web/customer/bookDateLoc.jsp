@@ -14,7 +14,7 @@
           let date1 = document.forms["myForm"]["pickupdate"].value;
           let date2 = document.forms["myForm"]["returndate"].value;
           
-          int diff = (int) ((date2.getTime() - date1.getTime())/(1000*60*60*24));
+//          int diff = (int) ((date2.getTime() - date1.getTime())/(1000*60*60*24));
           
           if (date2 <= date1) {
             alert("Return Date must be after Pickup Date");

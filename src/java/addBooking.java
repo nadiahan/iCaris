@@ -58,7 +58,8 @@ public class addBooking extends HttpServlet {
         String bookDate = LocalDateTime.now().toString();
         String extendReturnDate = "";
         String extendStatus = "";
-        String totalPrice = "0";
+        float totalPrice = 0;
+        float extraFee = 0;
         
 
 
@@ -74,7 +75,7 @@ public class addBooking extends HttpServlet {
            // Statement stmt = conn.createStatement();
            
            //Update dalam table booking dulu
-            String sqlinsert = "insert into booking(userID, pickupDate, pickupTime, returnDate, returnTime, pickupLocation, returnLocation, status, vehicleID, bookDate, extendReturnDate, extendStatus, totalPrice)values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlinsert = "insert into booking(userID, pickupDate, pickupTime, returnDate, returnTime, pickupLocation, returnLocation, status, vehicleID, bookDate, extendReturnDate, extendStatus, totalPrice, extraFee)values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sqlinsert, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, _userid);
             ps.setString(2, pickupDate);
@@ -90,7 +91,8 @@ public class addBooking extends HttpServlet {
             ps.setString(10, bookDate);
             ps.setString(11, extendReturnDate);
             ps.setString(12, extendStatus);
-            ps.setString(13, totalPrice);
+            ps.setFloat(13, totalPrice);
+            ps.setFloat(14, extraFee);
             ps.executeUpdate();
             
             ResultSet rs = ps.getGeneratedKeys();
