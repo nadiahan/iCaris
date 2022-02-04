@@ -58,13 +58,13 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">First Name</label>
-                                        <input type="text" class="form-control" id="fullName" value=<% out.print(_fname);%>>
+                                        <input type="text" name="fname" class="form-control" id="fname" value=<% out.print(_fname);%>>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">Last Name</label>
-                                        <input type="text" class="form-control" id="fullName" value=<% out.print(_lname);%>>
+                                        <input type="text" class="form-control" id="lname" value=<% out.print(_lname);%>>
                                     </div>
 
                                 </div>
@@ -72,7 +72,7 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="phone">Email</label>
-                                        <input type="text" class="form-control" id="phone" value=<% out.print(_email);%> disabled>
+                                        <input type="text" class="form-control" id="email" value=<% out.print(_email);%> disabled>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -92,7 +92,7 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="Address">Address</label>
-                                        <input type="name" class="form-control" id="address" value=<% out.print(_address);%>>
+                                        <input type="text" class="form-control" id="address" value=<% out.print(_address);%>>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -113,7 +113,15 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="text-right">
                                         <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-                                        <button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+                                        <a class="btn btn-primary" href="javascript:;" 
+                                           onclick = "this.href='../UpdateProfile?id=<%=_userid%>&fname=' + document.getElementById('fname').value + 
+                                                       '&lname='+ document.getElementById('lname').value + 
+                                                       '&phone='+ document.getElementById('phone').value +
+                                                       '&address='+ document.getElementById('address').value + 
+                                                       '&nric='+ document.getElementById('nric').value +
+                                                       '&driveclass='+ document.getElementById('driveclass').value + 
+                                                       '&password='+ document.getElementById('password').value" role="button">Update</a>
+<!--                                        <a class="btn btn-primary" href="UpdateProfile?id" role="button">Update</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <script>
+        <script>    
             const togglePassword = document.querySelector("#togglePassword");
             const password = document.querySelector("#password");
 

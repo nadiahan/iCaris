@@ -104,7 +104,9 @@ public class processPayment extends HttpServlet {
        // String vehicleID = request.getParameter("vehicleID");
         HttpSession session=request.getSession();  
         int A_ID = Integer.parseInt(session.getAttribute("A_ID").toString());
+        int B_ID = Integer.parseInt(session.getAttribute("B_ID").toString());
         String id = request.getParameter("id");
+        String total = request.getParameter("total");
         
         try {
              Class.forName(driver).newInstance();
@@ -116,13 +118,18 @@ public class processPayment extends HttpServlet {
            //Update dalam table booking dulu
             String sql = "UPDATE available SET vehicleID =  ? WHERE ID = '" + A_ID  + "'";
             PreparedStatement ps = conn.prepareStatement(sql);
-            
             ps.setString(1, id);
-           
-           
-           
             ps.executeUpdate();
             log(sql);
+            
+            String sql2 = "UPDATE booking SET vehicleID =  ?, totalPrice = ? WHERE bookingID = '" + B_ID  + "'";
+            PreparedStatement ps2 = conn.prepareStatement(sql2);
+            ps2.setString(1, id);
+            ps2.setString(2, total);
+            ps2.executeUpdate();
+            log(sql);
+            
+            
             
             conn.close();
             //response.sendRedirect("viewAll.jsp");

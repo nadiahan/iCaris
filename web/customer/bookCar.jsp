@@ -90,7 +90,7 @@
                         </div>
                         <h6 class="text-success">Including Tax</h6>
                         <div class="d-flex flex-column mt-4">
-                            <a class="btn btn-primary" href="viewCarDetails.jsp?id=<%=rs.getString("vehicleID")%>" role="button" style="margin: 5px;">Book</a>
+                            <a class="btn btn-primary" href="viewCarPayment.jsp?id=<%=rs.getString("vehicleID")%>" role="button" style="margin: 5px;">Book</a>
                             <button class="btn btn-outline-secondary" id="myBtn" role="button" style="margin: 5px;">View Details</button>
                             
                             

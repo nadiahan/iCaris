@@ -9,6 +9,12 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.text.DecimalFormat" %>
+<%@page import="java.text.SimpleDateFormat" %>
+<%@page import="java.util.Date" %>
+
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -34,9 +40,18 @@
                         String userid = "root";
                         String password = "";
                         
+                        
+                        //SessionDate from String to DateTime
+                        String sreturnDate=(String)session.getAttribute("sreturnDate");
+                        String spickupDate=(String)session.getAttribute("spickupDate");
+                        
+                        Date date2=new SimpleDateFormat("yyyy-MM-dd").parse(sreturnDate);
+                        Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(spickupDate);
+                        
+                        
                         String id = request.getParameter("id");
                         //int i=Integer.parseInt(request.getParameter("id"));
-                        
+                        DecimalFormat pf = new DecimalFormat("RM #0.00");
                         
                         try {
                             //int i=request.Integer.parseInt(request.getParameter("id"));  
@@ -63,10 +78,17 @@
                     
        <div class="container d-flex justify-content-center">
            
-            <figure class="card card-product-grid card-lg"> <a href="#" class="img-wrap" data-abc="true"> <span onclick="history.back()" class="close">&times;</span><img src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>""> </a>
+            <figure class="card card-product-grid card-lg"> 
+                <a href="#" class="img-wrap" data-abc="true"> 
+                    <span onclick="history.back()" class="close">&times;</span>
+                    <img src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> 
+                </a>
                 <figcaption class="info-wrap">
                     <div class="row">
-                        <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true"><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model")%></a> <span class="rated"><%=rs.getString("transmission")%> Transmission</span> </div>
+                        <div class="col-md-9 col-xs-9"> 
+                            <a href="#" class="title" data-abc="true"><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model")%></a> 
+                            <span class="rated"><%=rs.getString("transmission")%> Transmission</span> 
+                        </div>
                         <div class="col-md-3 col-xs-3">
                             <div class="rating text-right"> 
                                 <i class="fa fa-star"></i> 
@@ -82,14 +104,20 @@
                     <figcaption class="info-wrap">
                         <div class="row">
                             <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Total</a> 
-                                <span class="rated">2 days rental</span><br>
+                                
+<!--                                //kira hari dulu-->
+                                <% 
+                                int differenceInDays = (int) ((date2.getTime() - date1.getTime())/(1000*60*60*24));
+                                %>
+                                
+                                <span class="rated"><%=differenceInDays%> days rental</span><br>
                                 <span class="rated">Service Tax</span><br>
                             </div>
                             <div class="col-md-3 col-xs-3">
-                                <div class="rating text-right"> RM300.00</div>
-                                <span class="rated">RM282.00</span><br>
-                                <span class="rated">RM18.00</span><br>
-                            </div>
+                                <div class="rating text-right"> <%= pf.format(rs.getFloat("price")*differenceInDays)%></div>
+                                <span class="rated"><%= pf.format(rs.getFloat("price")*0.94*differenceInDays )%></span><br>
+                                <span class="rated"><%= pf.format(rs.getFloat("price")*0.06*differenceInDays ) %></span><br>
+                            </div> 
                            
                         </div>
                     </figcaption>
@@ -109,7 +137,7 @@
                 </div>
                 
                 
-                    <div class="bottom-wrap"> <a href="../processPayment?id=<%=rs.getString("vehicleID")%>" class="btn btn-primary float-right" data-abc="true"> Pay </a>
+                    <div class="bottom-wrap"> <a href="../processPayment?id=<%=rs.getString("vehicleID")%>&total=<%= pf.format(rs.getFloat("price")*differenceInDays)%>" class="btn btn-primary float-right" data-abc="true"> Pay </a>
                     <div class="price-wrap"> <a href="#" class="btn btn-outline-secondary float-left" data-abc="true"> Cancel </a> </div>
                 </div>
             </figure>

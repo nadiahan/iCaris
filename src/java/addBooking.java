@@ -25,7 +25,7 @@ import java.sql.*;
 @WebServlet(urlPatterns = {"/addBooking"})
 public class addBooking extends HttpServlet {
     
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
@@ -54,6 +54,7 @@ public class addBooking extends HttpServlet {
         //String bookingID = "10002";
         String vehicleID = "0";
         int A_ID = 0;
+        int B_ID = 0;
         String bookDate = LocalDateTime.now().toString();
         String extendReturnDate = "";
         String extendStatus = "";
@@ -74,8 +75,7 @@ public class addBooking extends HttpServlet {
            
            //Update dalam table booking dulu
             String sqlinsert = "insert into booking(userID, pickupDate, pickupTime, returnDate, returnTime, pickupLocation, returnLocation, status, vehicleID, bookDate, extendReturnDate, extendStatus, totalPrice)values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement ps = conn.prepareStatement(sqlinsert);
-            
+            PreparedStatement ps = conn.prepareStatement(sqlinsert, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, _userid);
             ps.setString(2, pickupDate);
             ps.setString(3, pickupTime);
@@ -91,22 +91,29 @@ public class addBooking extends HttpServlet {
             ps.setString(11, extendReturnDate);
             ps.setString(12, extendStatus);
             ps.setString(13, totalPrice);
-           
-           
             ps.executeUpdate();
             
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs != null && rs.next()) {
+                B_ID = rs.getInt(1);
+                 session.setAttribute("B_ID", B_ID);
+                }
+            
+            
+            
             // Update dalam table available
-            String sqlinsert2 = "insert into available(vehicleID, pickupDate, returnDate) values (?, ?, ?)";
+            String sqlinsert2 = "insert into available(vehicleID, pickupDate, returnDate, bookingID) values (?, ?, ?,?)";
             PreparedStatement ps2 = conn.prepareStatement(sqlinsert2, Statement.RETURN_GENERATED_KEYS);
             ps2.setString(1, vehicleID);
             ps2.setString(2, pickupDate);
             ps2.setString(3, returnDate);
+            ps2.setInt(4, B_ID);
             ps2.executeUpdate();
             
           
-            ResultSet rs = ps2.getGeneratedKeys();
-            if (rs != null && rs.next()) {
-                A_ID = rs.getInt(1);
+            ResultSet rs2 = ps2.getGeneratedKeys();
+            if (rs2 != null && rs2.next()) {
+                A_ID = rs2.getInt(1);
                  session.setAttribute("A_ID", A_ID);
                  
                 //ps.setInt(i, mb.getUserID("UserID"));
