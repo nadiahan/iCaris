@@ -49,7 +49,7 @@ public class addInquiry extends HttpServlet {
            
             HttpSession session=request.getSession();  
             String _userid = (String)session.getAttribute("userID");
-            String status = "1";
+            String status = "sent";
             
             Date today = (new java.util.Date());
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
