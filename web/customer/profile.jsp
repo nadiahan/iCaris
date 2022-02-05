@@ -8,10 +8,8 @@
         <title>TODO supply a title</title>
         <link rel="stylesheet" href="profile.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <meta charset="UTF-8">
-<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 <!--bawah ni punca dia jadi indented-->
 <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -36,6 +34,7 @@
             
             
           String count = (String)(session.getAttribute("count").toString());
+          String inqCount = (String)(session.getAttribute("inqCount").toString());
             
            
             
@@ -43,13 +42,18 @@
        <script type="text/javascript">
             $(document).ready(function(){
                 if (<%=count%>>0)
-            $("#myModal").modal('show');
+            $("#UpdateProfile").modal('show');
+            });
+            
+            $(document).ready(function(){
+                if (<%=inqCount%>>0)
+            $("#Inquiry").modal('show');
             });
         </script>
         
           <!-- The Modal -->
        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
+        <div id="UpdateProfile" class="modal fade">
                 <div class="modal-dialog modal-confirm">
                         <div class="modal-content">
                                 <div class="modal-header">
@@ -63,12 +67,14 @@
                                         <p class="text-center">Your profile has updated. Click "OK" to confirm.</p>
                                 </div>
                                 <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary btn-lg btn-block" onClick="refreshPage()" >Small button</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" onClick="refreshPage()" >Okay</button>
 <!--                                        <button class="btn btn-success btn-block"  data-dismiss="modal">OK</button>-->
                                 </div>
                         </div>
                 </div>
-        </div>  
+        </div>
+       
+       
 
 <%
                         Connection conn= null;

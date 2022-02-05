@@ -94,8 +94,8 @@
                 <ul class="nav-links">
                     <li><a href="profile.jsp">My Profile</a></li>
                     <li><a href="bookDateLoc.jsp">Bookings</a></li>
-                    <li><a href="#">Vehicle</a></li>
-                    <li><a href="#">Inquiries</a></li>
+                    <li><a href="vehiclesDisplay.jsp">Vehicle</a></li>
+                    <li><a href="inquiry.jsp">Inquiries</a></li>
                     
                 </ul>
             </nav>
