@@ -33,9 +33,9 @@
 
             header{
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
-                padding: 30px 10% 0px;
+                padding: 0px 10% 0px;
                 background-color: transparent;
 
 
@@ -45,12 +45,12 @@
                 height: 70px;
             }
 
-            .logo{
+/*            .logo{
                 position: absolute;
                 top:10px;
                 left:100px;
 
-            }
+            }*/
 
             .logout-button{
                 background-color: transparent;
@@ -94,9 +94,11 @@
             <nav>
                 <ul class="nav-links">
                     <li><a href="profile.jsp">My Profile</a></li>
+
                     <li><a href="bookDateLoc.jsp">Bookings</a></li>
                     <li><a href="vehiclesDisplay.jsp">Vehicle</a></li>
                     <li><a href="inquiry.jsp">Inquiries</a></li>
+
                     
                 </ul>
             </nav>
