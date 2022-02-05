@@ -32,7 +32,7 @@ public class svlt5 extends HttpServlet {
             int seats = Integer.parseInt(request.getParameter("seats"));
             String transmission = request.getParameter("transmission");
             String trunkSize = request.getParameter("trunkSize");
-            int price = Integer.parseInt(request.getParameter("price"));
+            float price = Float.parseFloat(request.getParameter("price"));
             int age = LocalDate.now().getYear() - Integer.parseInt(request.getParameter("year"));
             String rdTaxExpiry = request.getParameter("rdTaxExpiry");
             String image = request.getParameter("image");
@@ -63,7 +63,7 @@ public class svlt5 extends HttpServlet {
                 ps.setInt(6, seats);
                 ps.setString(7, transmission);
                 ps.setString(8, trunkSize);
-                ps.setInt(9, price);
+                ps.setFloat(9, price);
                 ps.setInt(10, age);
                 ps.setString(11, rdTaxExpiry);
                 //fis = new FileInputStream(image);
