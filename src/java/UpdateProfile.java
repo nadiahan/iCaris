@@ -90,15 +90,16 @@ public class UpdateProfile extends HttpServlet {
             log(update);
             
             if (count > 0){
-                System.out.println("success");
-                session.setAttribute("count", count);
+                System.out.println(count);
+             //   count=count+1;
+                //session.setAttribute("count", count);
             }
             
             conn.close();
             //response.sendRedirect("viewAll.jsp");
       
-            
-        response.sendRedirect("customer/profile.jsp?count=count");
+        session.setAttribute("count", count);
+        response.sendRedirect("customer/profile.jsp?");
         } 
         catch (Exception ex) {
              ex.printStackTrace();
