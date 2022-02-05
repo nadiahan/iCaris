@@ -12,11 +12,12 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    <%@include file="loginheader.jsp" %>
     <body>
     <div class="login">
   
     <form action = "../processRegister" method="post">
-        <img src="../img/iCARis logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 45%">
+        
         <h1>iCaris Car Rental</h1>
         <input type="text" name="fname" id="fname" placeholder="First Name" required="required" />
         <input type="text" name="lname" id="lname" placeholder="Last Name" required="required" />

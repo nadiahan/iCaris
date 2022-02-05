@@ -18,7 +18,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <%@include file="../customer/customerHeader.jsp" %>
+        <%@include file="loginheader.jsp" %>
        
         
         

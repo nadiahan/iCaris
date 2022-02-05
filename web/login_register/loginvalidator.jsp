@@ -17,7 +17,9 @@
             String _driveclass;
             String _phone;
             String _address;
-            int count; 
+            int count;
+            int inqCount;
+            int exist;
         %>
 
 <%
@@ -83,7 +85,8 @@
                                     session.setAttribute("phone",_phone);
                                     session.setAttribute("address",_address);
                                     session.setAttribute("count", 0);
-                                    
+                                    session.setAttribute("inqCount", 0);
+                                    session.setAttribute("exist", 1);
                                     
                                    // out.println (name + pwd);
                                    
