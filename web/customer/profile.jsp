@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
 <!--        <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 <!--bawah ni punca dia jadi indented-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+<!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
@@ -54,15 +54,17 @@
                         <div class="modal-content">
                                 <div class="modal-header">
                                         <div class="icon-box">
-                                                <i class="material-icons">&#xE876;</i>
+                                            <img src ="https://media.istockphoto.com/vectors/green-tick-checkmark-vector-icon-for-checkbox-marker-symbol-vector-id1079725292?k=20&m=1079725292&s=612x612&w=0&h=PQB6T2JxK4NILecaf1MBcuZmvP2G5wYKNJ3doMsGVrk=" width="50px">
                                         </div>				
-                                        <h4 class="modal-title w-100">Awesome!</h4>	
+                                        
+                                    <h4 class="modal-title w-100">Awesome!</h4>	
                                 </div>
                                 <div class="modal-body">
                                         <p class="text-center">Your profile has updated. Click "OK" to confirm.</p>
                                 </div>
                                 <div class="modal-footer">
-                                        <button class="btn btn-success btn-block" onClick="refreshPage()" data-dismiss="modal">OK</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" onClick="refreshPage()" >Small button</button>
+<!--                                        <button class="btn btn-success btn-block"  data-dismiss="modal">OK</button>-->
                                 </div>
                         </div>
                 </div>
