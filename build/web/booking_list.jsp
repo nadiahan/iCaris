@@ -20,7 +20,7 @@
         
         <h1>Booking List</h1>
         
-        <div class="addsearch">
+<!--        <div class="addsearch">
         <div class="searchinformation">
             <form class="searchinfo" action="svlt1" method="post">
                 <div class="search">
@@ -28,7 +28,7 @@
                     <button type="submit" class="submit">Search</button>
                 </div>
                  </form>
-        </div>
+        </div>-->
         
 <!--        <div class="addinformation">
             <form class="addinfo" action="svlt2" method="post">
