@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Main</title>
         <link rel="stylesheet" href="admin.css">
         <style>
             .box {
@@ -59,13 +59,18 @@
                 font-style: italic;
                 font-size: 20px;
             }
+            .chart {
+                background-color: white;
+                width: 900px;
+                margin: auto;
+            }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     </head>
     <body>
         <%@include file="headerAdmin.jsp" %>
 <!--        <h1>Main</h1>-->
-        
+
         <div class="box">
             <div class="cust">
                 <div class="logo">
@@ -232,7 +237,7 @@
                         ex.printStackTrace();
                     }
                 %>
-                
+        <div class="chart">        
         <canvas id="myChart" style="width:100%;max-width:800px;margin: auto;"></canvas>
         <script>
             var xValues = ["5 stars", "4 stars", "3 stars", "2 stars", "1 star"];
@@ -262,6 +267,6 @@
               }
             });
         </script>
-      
+        </div>
     </body>
 </html>
