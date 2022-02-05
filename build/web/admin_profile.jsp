@@ -199,7 +199,7 @@
                                     <div class="text-right">
                                         <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
                                         <a class="btn btn-primary" href="javascript:;" 
-                                           onclick = "this.href='UpdateProfile?id=<%=_userid%>&fname=' + document.getElementById('fname').value + 
+                                           onclick = "this.href='UpdateProfileAdmin?id=<%=_userid%>&fname=' + document.getElementById('fname').value + 
                                                        '&lname='+ document.getElementById('lname').value + 
                                                        '&phone='+ document.getElementById('phone').value +
                                                        '&address='+ document.getElementById('address').value + 
