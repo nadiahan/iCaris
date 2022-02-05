@@ -29,7 +29,8 @@ and open the template in the editor.
             <h1>iCaris Car Rental</h1>
           <input type="text" name="u" placeholder="Username" required="required" />
             <input type="password" name="p" placeholder="Password" required="required" />
-            <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large">Login.</button>
+            <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large" style="margin-bottom: 5px">Login.</button>
+            <a href="register.jsp" class = "btn btn-secondary">Does not have an account? Register here</a>
             <%@include file="loginvalidator.jsp" %>
         </form>
     </div>

@@ -154,12 +154,8 @@
                         String database = "rentalproject";
                         String userid = "root";
                         String password = "";
-                      //  int A_ID= Integer.parseInt(session.getAttribute("A_ID").toString());
-                        
-                        //String id = " ";
-                        
-                        String sreturnDate=(String)session.getAttribute("sreturnDate");
-                        String spickupDate=(String)session.getAttribute("spickupDate");
+                 
+                    
                         
                         try {
                             Class.forName(driver);
@@ -170,14 +166,7 @@
                             PreparedStatement ps = conn.prepareStatement(sqlselect);
    
                             ResultSet rs = ps.executeQuery();
-                            
-                          
-                           
-                
-                            
-                            int j = 0;
-                            
-                            String[] arr = null;
+                         
                             while(rs.next()){
 
                             %>    

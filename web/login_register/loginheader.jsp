@@ -21,7 +21,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="../vehiclesDisplay.jsp">Vehicles</a></li>
-                    <li id="inquiryHeader"><a href="#">Inquiries</a></li>
+                    <li id="inquiryHeader"><a href="../anonInquiry.jsp">Inquiries</a></li>
                     <li id="loginHeader"><a href="login.jsp">Login &nbsp;</a></li>
                     <li id="regHeader"><a href="register.jsp">&nbsp;Register</a></li>
                     
