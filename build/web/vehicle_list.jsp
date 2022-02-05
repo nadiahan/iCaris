@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
         <title>Vehicles List</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="admin.css">
     </head>
     <body>
@@ -82,7 +83,7 @@
                         <td> <%= rs.getString("transmission") %> </td>
                         <td> <%= rs.getInt("price") %> </td>
                         <td> <%= rs.getString("rdTaxExpiry") %> </td>
-                        <th scope="row"> <a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> > </th>
+                        <td><a href="viewVehicle.jsp?vehicleID=<%=rs.getString("vehicleID")%>"><i class="material-icons" style="font-size:24px">chevron_right</i></td>
                     </tr>
                             <%
                             }

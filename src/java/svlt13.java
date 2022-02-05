@@ -83,7 +83,12 @@ public class svlt13 extends HttpServlet {
                 
                     log(sqlupdate1);
                     
-                    response.sendRedirect("booking_list.jsp");
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('The extended return date request has been APPROVED');");
+                    out.println("location='booking_list.jsp';");
+                    out.println("</script>");
+                    
+                    //response.sendRedirect("booking_list.jsp");
                 }
             }
             
