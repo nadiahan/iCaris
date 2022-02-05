@@ -15,6 +15,8 @@
     <%@include file="../customer/customerHeader.jsp" %>
     <% 
         String inqCount = (String)(session.getAttribute("inqCount").toString());
+        String fname = (String)(session.getAttribute("fname"));
+        String lname = (String)(session.getAttribute("lname"));
     %>
 
         <script type="text/javascript">
@@ -50,7 +52,7 @@
       <h3>Inquiry Form</h3>
       <div class="container2">
           <label for="fname">Name <%= inqCount%></label>
-        <input type="text" id="name" name="name" placeholder="Your name.." required>
+          <input type="text" id="name" name="name" value="<% out.print(fname + " " + lname);   %>" disabled>
 
         <label for="lname">Title</label>
         <input type="text" id="title" name="title" placeholder="Title.." required>

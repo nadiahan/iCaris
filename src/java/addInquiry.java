@@ -43,7 +43,7 @@ public class addInquiry extends HttpServlet {
             String password = "";
 
             //String id = request.getParameter("id");
-            String name = request.getParameter("name");
+            //String name = request.getParameter("name");
             String title = request.getParameter("title");
             String inquiry = request.getParameter("inquiry");
            
@@ -67,14 +67,14 @@ public class addInquiry extends HttpServlet {
                // Statement stmt = conn.createStatement();
 
                //Update dalam table booking dulu
-                String sqlinsert = "insert into inquiry(userID, name, title, message, date, status)values(?, ?, ?, ?, ?, ?)";
+                String sqlinsert = "insert into inquiry(userID, title, message, date, status)values(?, ?, ?, ?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sqlinsert);
                 ps.setString(1, _userid);
-                ps.setString(2, name);
-                ps.setString(3, title);
-                ps.setString(4, inquiry);
-                ps.setString(5, date);
-                ps.setString(6, status);
+                //ps.setString(2, name);
+                ps.setString(2, title);
+                ps.setString(3, inquiry);
+                ps.setString(4, date);
+                ps.setString(5, status);
                
                 int count = ps.executeUpdate();
                 
