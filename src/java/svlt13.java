@@ -75,6 +75,14 @@ public class svlt13 extends HttpServlet {
                 
                     log(sqlupdate);
                     
+                    String sqlupdate1 = "update available set returnDate=? where bookingID=?";
+                    ps = conn.prepareStatement(sqlupdate1);
+                    ps.setString(1, extendReturnDate);
+                    ps.setInt(2, bookingID);
+                    ps.executeUpdate();
+                
+                    log(sqlupdate1);
+                    
                     response.sendRedirect("booking_list.jsp");
                 }
             }
