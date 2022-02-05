@@ -59,13 +59,16 @@
                         <p>Brand : <%= rs.getString("brand") %> </p>
                         <p>Model Name : <%= rs.getString("model") %> </p>
                         <p>Registration No. : <%= rs.getString("vehicleNo") %> </p>
+                        <hr>
                         <p>Colour : <%= rs.getString("colour") %> </p>
                         <p>Number of seats : <%= rs.getString("seats") %> </p>
                         <p>Transmission type : <%= rs.getString("transmission") %> </p>
                         <p>Trunk size : <%= rs.getString("trunkSize") %> </p>
-                        <p>Rental price : RM <%= rs.getString("price") %> </p>
+                        <p>Rental price : RM <%= rs.getFloat("price") %> </p>
+                        <hr>
                         <p>Age : <%= rs.getString("age") %> </p>
                         <p>Road Tax expiry date : <%= rs.getString("rdTaxExpiry") %> </p>
+                        <hr>
                         <p> <a href="view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>"> <img src="img/photo-camera.png" style="width:50px; height:50px"> </a> </p>
             <%
                     }
@@ -75,6 +78,7 @@
                     ex.printStackTrace();
                 }
             %>
+                        
             <%
                 session.setAttribute("vehicleID",vehicleID);
             %>
@@ -84,6 +88,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
+                            <button type="button" name="edit" class="btn btn-primary"><a href="view_feedback.jsp" target="blank">Feedback</button>
                             <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='edit_vehicle_form.jsp'">Edit Info</button>
                             <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_vehicle.jsp'">Delete</button>
                         </div>

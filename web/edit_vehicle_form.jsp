@@ -149,7 +149,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="price" value="<%= rs.getInt("price")%>" class="form-control"  type="text">
+                                <input name="price" value="<%= rs.getFloat("price")%>" class="form-control"  type="text">
                             </div>
                         </div>
                     </div>

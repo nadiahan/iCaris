@@ -39,6 +39,23 @@
                 background-color: white;
                 border-radius: 15px;
             }
+            
+            .custmess {
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: white;
+                border-radius: 40px 40px 40px 0px;
+            }
+            
+            .admess {
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: #2e5984;
+                border-radius: 40px 40px 0px 40px;
+                color : white;
+            }
         </style>
     </head>
     <body>
@@ -67,18 +84,17 @@
                     ps.setString(1, inquiryID);
                     ResultSet rs = ps.executeQuery();
                             
-                    while(rs.next()){
-                                
+                    while(rs.next()){           
             %>
                         <div class="inq">
                             <p> <%= rs.getString("date") %> </p>
-                            <p><b>From : </b> <%= rs.getString("fname") %> <%= rs.getString("lname") %> </p>
+                            <p><b>From : </b> <%= rs.getString("fname") %> <%= rs.getString("lname") %> <i><<%= rs.getString("email") %>></i> </p>
                             <p><b>Title :</b> <%= rs.getString("title") %> </p>
                         </div>
+                        
                         <div class="mess"
                             <p> <%= rs.getString("message") %> </p>
                         </div>
-                        
             <%
                     }
        
@@ -94,20 +110,30 @@
                     Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
     
                     //prepared statement
-                    String sqlselect = "select * from reply where inquiryID=?";
+                    String sqlselect = "select * from reply, users where inquiryID=? and reply.userID=users.userID";
                     PreparedStatement ps = conn.prepareStatement(sqlselect);
                     ps.setString(1, inquiryID);
                     ResultSet rs = ps.executeQuery();
                             
                     while(rs.next()){
-                        //int admin = 1001 ;
-                        //int user = rs.getInt("userID");
-                        //if(user.equals("admin")) 
+                        String user = rs.getString("userType");
+                        if (user.equals("customer"))
+                        {
             %>
-                        <div class="mess"
+                        <div class="custmess"
                             <p> <%= rs.getString("message") %> </p>
                         </div>
-             <%
+            <%
+                        }
+                        else
+                        {
+            %>
+                        <div class="admess"
+                            <p> <%= rs.getString("message") %> </p>
+                        </div>
+            <%
+                        }
+                        
                     }
        
                 }
