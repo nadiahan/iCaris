@@ -34,7 +34,8 @@
             
             
           String count = (String)(session.getAttribute("count").toString());
-          String inqCount = (String)(session.getAttribute("inqCount").toString());
+          
+         
             
            
             
@@ -45,10 +46,7 @@
             $("#UpdateProfile").modal('show');
             });
             
-            $(document).ready(function(){
-                if (<%=inqCount%>>0)
-            $("#Inquiry").modal('show');
-            });
+            
         </script>
         
           <!-- The Modal -->
