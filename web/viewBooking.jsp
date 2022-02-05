@@ -56,19 +56,48 @@
                     while(rs.next()){
                                 
             %>
+                        <p><i><b>Customer's Info</b></i></p>
                         <p>Customer Name : <%= rs.getString("fname") %>  <%= rs.getString("lname") %> (<%= rs.getString("userID") %>)</p>
                         <p>Email : <%= rs.getString("email") %> </p>
                         <p>Phone Number : <%= rs.getString("phone") %> </p>
-                        <p>Model Name : <%= rs.getString("model") %> </p>
+                        <hr>
+                        <p><i><b>Rented Vehicle Info</b></i></p>
+                        <p>Vehicle Name : <%= rs.getString("brand") %> <%= rs.getString("model") %> </p>
+                        <p>Vehicle's No. : <%= rs.getString("vehicleNo") %> </p>
+                        <hr>
+                        <p><i><b>Pickup / Return Info</b></i></p>
                         <p>Pickup Date : <%= rs.getString("pickupDate") %> </p>
                         <p>Pickup Time : <%= rs.getString("pickupTime") %> </p>
                         <p>Return Date : <%= rs.getString("returnDate") %> </p>
                         <p>Return Time : <%= rs.getString("returnTime") %> </p>
                         <p>Pickup Location : <%= rs.getString("pickupLocation") %> </p>
                         <p>Return Location : <%= rs.getString("returnLocation") %> </p>
-                        <p>Total Price : RM <%= rs.getString("totalPrice") %> </p>
+                        <hr>
+                        <p><i><b>Booking Extension Info</b></i></p>
                         <p>Requested Extend Return Date  : <%= rs.getString("extendReturnDate") %> </p>
                         <p>Extension Status : <%= rs.getString("extendStatus") %> </p>
+                        
+                        <div class="container">
+                            <form class="well form-horizontal">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label"></label>
+                                        <div class="col-md-4">
+                                            <button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_extension.jsp'">View Extension Details</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        
+                        <hr>
+                        <p><i><b>Total Price</b></i></p>
+                        <p>Total Rental : RM <%= rs.getFloat("totalPrice") %> </p>
+                        <p>Late Return Fee : RM <%= rs.getFloat("extraFee") %> </p>
+                        <%
+                            float totall = rs.getFloat("totalPrice") + rs.getFloat("extraFee"); 
+                        %>
+                        <p><b>Total : RM <%= totall %> </b></p>
             <%
                     }
        
@@ -89,7 +118,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label"></label>
                         <div class="col-md-4">
-                            <button type="button" name="edit" class="btn btn-info" onclick="window.location.href='view_extension.jsp'">View Extension Details</button>
+                            <button type="button" name="edit" class="btn btn-primary" onclick="window.location.href='return_vehicle.jsp'">Return Vehicle</button>
                             <button type="button" name="edit" class="btn btn-success" onclick="window.location.href='edit_booking_form.jsp'">Update</button>
                             <button type="button" name="delete" class="btn btn-danger" onclick="window.location.href='delete_booking.jsp'">Delete</button>
                         </div>

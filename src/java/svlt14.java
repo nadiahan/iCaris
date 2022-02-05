@@ -1,4 +1,4 @@
-
+//reject extension
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = {"/svlt7"})
-public class svlt7 extends HttpServlet {
+@WebServlet(urlPatterns = {"/svlt14"})
+public class svlt14 extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
-            HttpSession session = request.getSession();
-            String vehicleID = session.getAttribute("vehicleID").toString();
             
-            String driver = "com.mysql.jdbc.Driver";
+           HttpSession session = request.getSession();
+           int bookingID = Integer.parseInt(session.getAttribute("bookingID").toString());
+           
+           String driver = "com.mysql.jdbc.Driver";
             String connectionUrl = "jdbc:mysql://localhost:3306/";
             String database = "rentalproject";
             String userid = "root";
@@ -34,14 +34,15 @@ public class svlt7 extends HttpServlet {
                
                 //prepared statement 
                 
-                String sqlupdate = "delete from vehicle where vehicleID=?";
+                String sqlupdate = "update booking set extendStatus=? where bookingID=?";
                 PreparedStatement ps = conn.prepareStatement(sqlupdate);
-                ps.setString(1, vehicleID);
+                ps.setString(1, "REJECTED");
+                ps.setInt(2, bookingID);
                 ps.executeUpdate();
                 
                 log(sqlupdate);
             
-                response.sendRedirect("vehicle_list.jsp");
+                response.sendRedirect("booking_list.jsp");
             }
             
             catch(Exception ex){
