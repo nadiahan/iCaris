@@ -22,6 +22,7 @@
                 transition: all 0.3s ease 0s;
                 border-radius: 15px;
                 justify-content: space-between;
+                align-items: center;
 
             }
 
@@ -66,8 +67,8 @@
             }
             .pickupDate{
                 color:grey;
-                font-size: 22px;
-                padding: 2% 0px;
+                font-size: 20px;
+/*                padding: 2% 0px;*/
             }
 
             ul{
@@ -99,7 +100,7 @@
 
                         <ul class="cardDesc">
                             <li class="carName">AXIA</li>
-                            <li class="bookingId">ICRAX0001</li>
+                            <li class="bookingId">Booking Ref : ICRAX0001</li>
                         </ul>
 
 
