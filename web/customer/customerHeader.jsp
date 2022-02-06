@@ -95,9 +95,9 @@
                 <ul class="nav-links">
                     <li><a href="profile.jsp">My Profile</a></li>
 
-                    <li><a href="bookDateLoc.jsp">Bookings</a></li>
+                    <li><a href="mainBooking.jsp">Bookings</a></li>
                     <li><a href="vehiclesDisplay.jsp">Vehicle</a></li>
-                    <li><a href="inquiry.jsp">Inquiries</a></li>
+                    <li><a href="mainInquiry.jsp">Inquiries</a></li>
 
                     
                 </ul>
