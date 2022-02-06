@@ -35,12 +35,12 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="type" value="Car" /> Car
+                                    <input type="radio" name="type" value="Car" required/> Car
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="type" value="Motorcycle" /> Motorcycle
+                                    <input type="radio" name="type" value="Motorcycle" required/> Motorcycle
                                 </label>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="brand" placeholder="Brand" class="form-control"  type="text">
+                                <input  name="brand" placeholder="Brand" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="model" placeholder="Model" class="form-control"  type="text">
+                                <input name="model" placeholder="Model" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="vehicleNo" placeholder="XXX0000" class="form-control"  type="text">
+                                <input name="vehicleNo" placeholder="XXX0000" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                         <div class="col-md-4 selectContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                                <select name="colour" class="form-control selectpicker">
+                                <select name="colour" class="form-control selectpicker" required>
                                     <option value="White">White</option>
                                     <option value="Black">Black</option>
                                     <option value="Grey">Grey</option>
@@ -108,7 +108,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="seats" placeholder="5/7" class="form-control" type="text">
+                                <input name="seats" placeholder="5/7" class="form-control" type="number" min="2" max="8" required>
                             </div>
                         </div>
                     </div>
@@ -119,12 +119,12 @@
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="transmission" value="Auto" /> Auto
+                                    <input type="radio" name="transmission" value="Auto" required/> Auto
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="transmission" value="Manual" /> Manual
+                                    <input type="radio" name="transmission" value="Manual" required/> Manual
                                 </label>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="trunkSize" placeholder="1 large luggage" class="form-control"  type="text">
+                                <input name="trunkSize" placeholder="1 large luggage" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="price" placeholder="eg:150" class="form-control"  type="text">
+                                <input name="price" placeholder="eg:150" class="form-control"  type="number" min="100" required>
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="year" placeholder="yyyy" class="form-control"  type="text">
+                                <input name="year" placeholder="yyyy" class="form-control"  min="1900" type="number" required>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="rdTaxExpiry" placeholder="mm/yyyy" class="form-control"  type="text">
+                                <input name="rdTaxExpiry" placeholder="mm/yyyy" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>

@@ -35,7 +35,7 @@
             .mess {
                 width: 100%;
                 margin-top: 10px;
-                padding: 10px;
+                padding: 10px 25px;
                 background-color: white;
                 border-radius: 15px;
             }
@@ -43,7 +43,7 @@
             .custmess {
                 width: 100%;
                 margin-top: 10px;
-                padding: 10px;
+                padding: 10px 25px;
                 background-color: white;
                 border-radius: 40px 40px 40px 0px;
             }
@@ -51,10 +51,11 @@
             .admess {
                 width: 100%;
                 margin-top: 10px;
-                padding: 10px;
+                padding: 10px 25px;
                 background-color: #2e5984;
                 border-radius: 40px 40px 0px 40px;
                 color : white;
+                text-align: right;
             }
         </style>
     </head>

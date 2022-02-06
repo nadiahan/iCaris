@@ -42,7 +42,11 @@ public class svlt14 extends HttpServlet {
                 
                 log(sqlupdate);
             
-                response.sendRedirect("booking_list.jsp");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('The extended return date request has been REJECTED');");
+                out.println("location='booking_list.jsp';");
+                out.println("</script>");
+                //response.sendRedirect("booking_list.jsp");
             }
             
             catch(Exception ex){
