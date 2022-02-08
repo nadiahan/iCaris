@@ -61,7 +61,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="type" value="<%= rs.getString("type")%>" class="form-control"  type="text">
+                                <input name="type" value="<%= rs.getString("type")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="brand" value="<%= rs.getString("brand")%>" class="form-control"  type="text">
+                                <input  name="brand" value="<%= rs.getString("brand")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="model" value="<%= rs.getString("model")%>" class="form-control"  type="text">
+                                <input name="model" value="<%= rs.getString("model")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="vehicleNo" value="<%= rs.getString("vehicleNo")%>" class="form-control"  type="text">
+                                <input name="vehicleNo" value="<%= rs.getString("vehicleNo")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="colour" value="<%= rs.getString("colour")%>" class="form-control"  type="text">
+                                <input name="colour" value="<%= rs.getString("colour")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="seats" value="<%= rs.getInt("seats")%>" class="form-control" type="text">
+                                <input name="seats" value="<%= rs.getInt("seats")%>" class="form-control" type="text" required>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="transmission" value="<%= rs.getString("transmission")%>" class="form-control"  type="text">
+                                <input name="transmission" value="<%= rs.getString("transmission")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="trunkSize" value="<%= rs.getString("trunkSize")%>" class="form-control"  type="text">
+                                <input name="trunkSize" value="<%= rs.getString("trunkSize")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="price" value="<%= rs.getFloat("price")%>" class="form-control"  type="text">
+                                <input name="price" value="<%= rs.getFloat("price")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="year" value="<%= year %>" class="form-control"  type="text">
+                                <input name="year" value="<%= year %>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="rdTaxExpiry" value="<%= rs.getString("rdTaxExpiry")%>" class="form-control"  type="text">
+                                <input name="rdTaxExpiry" value="<%= rs.getString("rdTaxExpiry")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
