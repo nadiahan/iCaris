@@ -67,7 +67,7 @@
             }
         </style>
     </head>
-    <body>
+    <body>      
         <%@include file="customerHeader.jsp" %>
         <div class="main-container">
             <a  href="bookDateLoc.jsp">

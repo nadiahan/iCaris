@@ -11,7 +11,16 @@ and open the template in the editor.
         <link rel="stylesheet" href="login.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+     <style>
+            body{
+                color: white;
+            }
+            
+            h1{
+                font-size: 25px;
+                text-align: center;
+            }
+        </style>
         <script>
         function validateForm() {
             let pw = document.forms["myForm"]["pw"].value;
@@ -35,8 +44,9 @@ and open the template in the editor.
     <div class="login">
   
     <form name="myForm" action = "../processRegister" method="post" onsubmit="return validateForm()">
+        <h1>&nbsp;&nbsp;iCaris Car Rental</h1>
+        <div class ="kotakluar"
         
-        <h1>iCaris Car Rental</h1>
         <input type="text" name="fname" id="fname" placeholder="First Name" required="required" />
         <input type="text" name="lname" id="lname" placeholder="Last Name" required="required" />
         <input type="text" name="nric" id="nric" placeholder="NRIC/Passport Number" required="required" />
@@ -48,7 +58,8 @@ and open the template in the editor.
         <input type="text" name="address" id="address" placeholder="Address" required="required" />
         
         <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 5px;">Register</button>
-        <a href="login.jsp" class = "btn btn-secondary" style="margin-left: 20px;">Already have an account? Login here</a>
+        Already have an account? <a href="register.jsp" style="font-size: 15px; color: #3762bc"><b><i>Login here</i></b></a>
+        </div>
     </form>
     </div>
     </body>

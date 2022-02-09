@@ -185,35 +185,7 @@
               </ul>-->
               <button class="buy-1" onclick="location.href='bookDateLoc.jsp';" >Book Now</button>
             </div>
-            <div class="content">
-              <img src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>">
-              <h3><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %></h3>
            
-        
-<!--              <ul>
-                <li><i class="fa fa-star" aria-hidden="false"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              </ul>-->
-              <button class="buy-2" onclick="location.href='bookDateLoc.jsp';" >Book Now</button>
-            </div>
-            <div class="content">
-              <img src = "../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>">
-              <h3><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %></h3>
-           
-        
-<!--              <ul>
-                <li><i class="fa fa-star" aria-hidden="false"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              </ul>-->
-              <button class="buy-3" onclick="location.href='bookDateLoc.jsp';" >Book Now</button>
-            </div>
-        </div>
         <%
                             
                             

@@ -16,6 +16,12 @@ and open the template in the editor.
         <link rel="stylesheet" href="login.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                color: white;
+                font-size: 15px;
+            }
+        </style>
     </head>
     <body>
         <%@include file="loginheader.jsp" %>
@@ -30,7 +36,7 @@ and open the template in the editor.
           <input type="text" name="u" placeholder="Username" required="required" />
             <input type="password" name="p" placeholder="Password" required="required" />
             <button type="submit" onclick="myFunction()" class="btn btn-primary btn-block btn-large" style="margin-bottom: 5px">Login.</button>
-            <a href="register.jsp" class = "btn btn-secondary">Does not have an account? Register here</a>
+            Does not have an account? <a href="register.jsp" style="font-size: 15px; color: #3762bc"><i>Register here</i></b></a>
             <%@include file="loginvalidator.jsp" %>
         </form>
     </div>

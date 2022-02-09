@@ -28,23 +28,23 @@
         </script>
         <div id="Inquiry" class="modal fade">
                     <div class="modal-dialog modal-confirm">
-                            <div class="modal-content">
-                                    <div class="modal-header">
-                                            <div class="icon-box">
-                                                <img src ="https://media.istockphoto.com/vectors/green-tick-checkmark-vector-icon-for-checkbox-marker-symbol-vector-id1079725292?k=20&m=1079725292&s=612x612&w=0&h=PQB6T2JxK4NILecaf1MBcuZmvP2G5wYKNJ3doMsGVrk=" width="50px">
-                                            </div>				
-
-                                        <h4 class="modal-title w-100">Awesome!</h4>	
-                                    </div>
-                                    <div class="modal-body">
-                                            <p class="text-center">Your inquiry has been sent. Click "OK" to confirm.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary btn-lg btn-block" onClick="refreshPage()" >Ocayy you, maceh</button>
-    <!--                                        <button class="btn btn-success btn-block"  data-dismiss="modal">OK</button>-->
-                                    </div>
-                            </div>
-                    </div>
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <div class="icon-box">
+                                            <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/768px-White_check.svg.png" width="50px">
+                                        </div>				
+                                        
+                                    <h4 class="modal-title w-100">Awesome!</h4>	
+                                </div>
+                                <div class="modal-body">
+                                        <p class="text-center">Your inquiry has been sent. <br>We will give you a reply very soon. Thank you.</p>
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary btn-lg btn-block" onClick="refreshPage()" >Okay</button>
+<!--                                        <button class="btn btn-success btn-block"  data-dismiss="modal">OK</button>-->
+                                </div>
+                        </div>
+                </div>
         </div>  
 <br><br>
 <div class="inquiryform">

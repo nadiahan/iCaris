@@ -1,9 +1,14 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.text.DecimalFormat" %>
+<%@page import="java.text.SimpleDateFormat" %>
+<%@page import="java.util.Date" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -15,6 +20,7 @@
 <!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+        
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
             *{  
@@ -48,6 +54,7 @@
             .summaryCard{
 
 /*                height: 300px;*/
+                text-align: center;
                 background-color: white;
                 margin: 5% 35%;
                 border-radius: 15px;
@@ -118,7 +125,7 @@
             
             .carName{
                 font-family: "Montserrat", sans-serif;
-                font-size: 24px;
+                font-size: 20px;
                 color: black;
                 font-weight: bold;
                 letter-spacing: 2px;
@@ -133,7 +140,7 @@
             }
             
             .totContainer{
-                display: flex;
+                display: none;
                 flex-direction: row;
                 justify-content: space-between;
             }
@@ -163,110 +170,110 @@
             .button{
                 text-align: center;
             }
+            
+          input[type=date], select{
+
+
+            padding: 8px 30px;
+            margin: 10px 30px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            box-sizing: border-box;
+            justify-content: center;
+            text-align: center;
+
+          }
 
 
 
 
         </style>
+        
+      
     </head>
     <body>
-        <%
-                        String driver = "com.mysql.jdbc.Driver";
-                        String connectionUrl = "jdbc:mysql://localhost:3306/";
-                        String database = "rentalproject";
-                        String userid = "root";
-                        String password = "";
-                        String vehicleID = request.getParameter("vehicleID");
-                        String bookingID = request.getParameter("bookingID");
-                        
-                        String id = request.getParameter("id");
-                        //int i=Integer.parseInt(request.getParameter("id"));
-                        
-                        
-                        try {
-                            //int i=request.Integer.parseInt(request.getParameter("id"));  
-                            Class.forName(driver);
-                            Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
-                           
-                            //prepared statement wher   
-                            String sqlselect = "select * from booking where bookingID ='"+bookingID+"'";
-                            PreparedStatement ps = conn.prepareStatement(sqlselect);
-   
-                            ResultSet rs = ps.executeQuery();
-                            
-                            
-                        //    vehicleID = rs.getString("vehicleID");
-//                            String sqlselect2 = "select * from vehicle where vehicleID = '3'";
-//                            PreparedStatement ps2 = conn.prepareStatement(sqlselect2);
-//                            
-//                            ResultSet rs2 = ps2.executeQuery();
-//                            
-//                            String name = rs2.getString("brand");
-//                            String model = rs2.getString("model");
-                            
-                            //if vehicle id == 
-                            //rs.getString ("vehicleID");
-                                
-                            while(rs.next()){
-                   
-                            String sqlselect2 = "select * from vehicle where vehicleID ='"+vehicleID+"'";
-                            PreparedStatement ps2 = conn.prepareStatement(sqlselect2);
-   
-                            ResultSet rs2 = ps2.executeQuery();
-                            while(rs2.next()){
-                                float total = rs.getFloat("totalPrice")+rs.getFloat("extraFee");
-                                String returnDate = rs.getString ("returnDate");
-                                
-                                if (rs.getString("extendReturnDate")!= null){
-                                returnDate = rs.getString("extendReturnDate");
-                                } else
-                                returnDate =  rs.getString("returnDate");
-                            %>
+        
 
         <div class="header">
 
             <a href="currentBooking.jsp"><p class="backBtn"><img src = "../img/back.png" width="30px">&nbsp Return</p></a>
 
         </div>
+        <%
+                        String driver = "com.mysql.jdbc.Driver";
+                        String connectionUrl = "jdbc:mysql://localhost:3306/";
+                        String database = "rentalproject";
+                        String userid = "root";
+                        String password = "";
+                        String vehicleID = null;
+                        String _userid = (String) session.getAttribute("userID");
+                        
+
+                        
+                        String bookingID= request.getParameter("bookingID");
+                        float price = Float.parseFloat(request.getParameter("price"));
+
+//                        Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(returnDate);
+//                      
+                        //int i=Integer.parseInt(request.getParameter("id"));
+//                        DecimalFormat pf = new DecimalFormat("#0.00");
+                     
+                                
+                        try {
+                            //int i=request.Integer.parseInt(request.getParameter("id"));  
+                            Class.forName(driver);
+                            Connection conn = DriverManager.getConnection(connectionUrl+database,userid,password);
+                           
+                            //prepared statement
+                            String sqlselect = "select * from booking where bookingID ='"+bookingID+"'";
+                            PreparedStatement ps = conn.prepareStatement(sqlselect);
+   
+                            ResultSet rs = ps.executeQuery();
+                            
+                            //if vehicle id == 
+                            //rs.getString ("vehicleID");
+                            while(rs.next()){
+                                
+                            %>    
  
         <div class="summaryCard">
             <div class="carFrame">
-                <img class="imgCar" src="../view_image.jsp?vehicleID=<%=rs2.getString("vehicleID")%>" alt="Car picture">
-                <p class="carName"><%= rs2.getString("brand")%><%out.print(" ");%><%= rs2.getString("model") %></p>
-                <p class="bookingId">Booking Ref : IC<%= rs.getString ("bookingID")%></p>
+                <p class="carName" style="color:#0052A2;">DATE EXTENSION REQUEST</p>
+                <p class="bookingId">(Booking Ref : <%= bookingID%>)</p>
             </div>
             
             
             <div class="lineBox2"></div>
-            <p class="place"><%= rs.getString ("pickupLocation")%></p>
-            <p class="timeDetail"><%= rs.getString ("pickupTime")%></p>
-            <p class="dateDetail"><%= rs.getString ("pickupDate")%></p>
-            <div class="lineBox1"></div>
-            <p class="place"><%= rs.getString ("returnLocation")%><p>
-            <p class="timeDetail"><%= rs.getString ("returnTime")%></p>
-            <p class="dateDetail"><%= returnDate %></p>
+            <input type="date" id="extenddate" name="extenddate" required min = "<% rs.getDate("returnDate"); %>">
+            
+            
+            
+            <a class="btn btn-primary" href="javascript:;" onclick = "this.href='../updateDate?bookingID=<%=bookingID%>&price=<%= rs.getFloat("totalPrice")%>&extenddate=' 
+                                                       + document.getElementById('extenddate').value" role="button">Okay</a>
+             <!--<a class="btn btn-primary" href="javascript:;" onclick = "this.href='../UpdateDate?id\ role="button">Update</a>-->
+            
+<!--            <p id="demo"></p>-->
+            
 <!--            <div class="sizedBox1"></div>-->
             <div class="lineBox2"></div>
-            <div class="totContainer">
-                <p class="totText">Total</p>
-                <p class="totPrice">RM<%= total%></p>
-                
-                
-                
-            </div>
-            <div class = "button">
-                <a href="extendDate.jsp?bookingID=<%= rs.getString ("bookingID")%>&returndate=<%= rs.getString ("returnDate")%>&price=<%= rs.getString ("totalPrice")%>" class="btn btn-outline-warning btn-lg btn-block"><B>EXTEND RETURN DATE</B></a>
-            </div>
-        </div>
+<!--            <div class="totContainer" id="totContainer">
+               
+                <p class="totText">Total Days</p>
+                <p class="totPrice" id="mytext">RM</p>
+                 
+            </div>-->
             
-<%;
+        </div>
+                            <%
                             }
-}
        
                         }
                         catch(Exception ex) {
                             ex.printStackTrace();
                         }
                     %>
+
     </body>
 </html>

@@ -171,20 +171,20 @@
 
                             %>    
         <div class="gallery">
-            <div class="content">
+<!--            <div class="content">
               <img src = "view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>">
               <h3><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %></h3>
            
         
-<!--              <ul>
+              <ul>
                 <li><i class="fa fa-star" aria-hidden="false"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              </ul>-->
+              </ul>
               <button class="buy-1" onclick=myFunction(); >Book Now</button>
-            </div>
+            </div>-->
             <div class="content">
               <img src = "view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>">
               <h3><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %></h3>
@@ -199,20 +199,20 @@
               </ul>-->
               <button class="buy-2" onclick=myFunction(); >Book Now</button>
             </div>
-            <div class="content">
+<!--            <div class="content">
               <img src = "view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>">
               <h3><%= rs.getString("brand")%><%out.print(" ");%><%= rs.getString("model") %></h3>
            
         
-<!--              <ul>
+              <ul>
                 <li><i class="fa fa-star" aria-hidden="false"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              </ul>-->
+              </ul>
               <button class="buy-3" onclick=myFunction(); >Book Now</button>
-            </div>
+            </div>-->
         </div>
         <%
                             
