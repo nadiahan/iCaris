@@ -73,7 +73,7 @@ public class svlt5 extends HttpServlet {
                 ps.executeUpdate();
                 
                 log(sqlinsert);
-            
+           
                 response.sendRedirect("vehicle_list.jsp");
             }
             

@@ -181,7 +181,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input type="file" name="image" class="form-control" accept=".jpg, .jpeg, .png">
+                                <input type="file" name="image" class="form-control" accept=".jpg, .jpeg, .png" required>
                             </div>
                         </div>
                     </div>

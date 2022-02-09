@@ -60,7 +60,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="fname" value="<%= rs.getString("fname")%>" class="form-control"  type="text">
+                                <input name="fname" value="<%= rs.getString("fname")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="lname" value="<%= rs.getString("lname")%>" class="form-control"  type="text">
+                                <input name="lname" value="<%= rs.getString("lname")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="email" value="<%= rs.getString("email")%>" class="form-control"  type="text">
+                                <input  name="email" value="<%= rs.getString("email")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="password" value="<%= rs.getString("password")%>" class="form-control"  type="text">
+                                <input name="password" value="<%= rs.getString("password")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="phone" value="<%= rs.getString("phone")%>" class="form-control"  type="text">
+                                <input name="phone" value="<%= rs.getString("phone")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input  name="driveclass" value="<%= rs.getString("driveclass")%>" class="form-control"  type="text">
+                                <input  name="driveclass" value="<%= rs.getString("driveclass")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="address" value="<%= rs.getString("address")%>" class="form-control"  type="text">
+                                <input name="address" value="<%= rs.getString("address")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="nric" value="<%= rs.getString("nric")%>" class="form-control" type="text">
+                                <input name="nric" value="<%= rs.getString("nric")%>" class="form-control" type="text" required>
                             </div>
                         </div>
                     </div>

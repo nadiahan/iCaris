@@ -82,7 +82,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="pickupTime" value="<%= rs.getString("pickupTime")%>" class="form-control"  type="time">
+                                <input name="pickupTime" value="<%= rs.getString("pickupTime")%>" class="form-control"  type="time" required>
                             </div>
                         </div>
                     </div>        
@@ -92,7 +92,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="returnTime" value="<%= rs.getString("returnTime")%>" class="form-control"  type="time">
+                                <input name="returnTime" value="<%= rs.getString("returnTime")%>" class="form-control"  type="time" required>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="pickupLocation" value="<%= rs.getString("pickupLocation")%>" class="form-control"  type="text">
+                                <input name="pickupLocation" value="<%= rs.getString("pickupLocation")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>        
@@ -112,7 +112,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="returnLocation" value="<%= rs.getString("returnLocation")%>" class="form-control"  type="text">
+                                <input name="returnLocation" value="<%= rs.getString("returnLocation")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="status" value="<%= rs.getString("status")%>" class="form-control"  type="text">
+                                <input name="status" value="<%= rs.getString("status")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>   
@@ -132,7 +132,7 @@
                         <div class="col-md-4 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
-                                <input name="totalPrice" value="<%= rs.getInt("totalPrice")%>" class="form-control"  type="text">
+                                <input name="totalPrice" value="<%= rs.getInt("totalPrice")%>" class="form-control"  type="text" required>
                             </div>
                         </div>
                     </div>        
