@@ -63,7 +63,7 @@ public class processRegister extends HttpServlet {
             log(sqlinsert);
             
             conn.close();
-            //response.sendRedirect("viewAll.jsp");
+            response.sendRedirect("login_register/login.jsp");
             
         } 
         catch (Exception ex) {

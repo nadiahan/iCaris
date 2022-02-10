@@ -263,7 +263,9 @@
                 
             </div>
             <div class = "button">
-                <a href="extendDate.jsp?bookingID=<%= rs.getString ("bookingID")%>&returndate=<%= rs.getString ("returnDate")%>&price=<%= rs.getString ("totalPrice")%>" class="btn btn-outline-warning btn-lg btn-block"><B>EXTEND RETURN DATE</B></a>
+                <a href="extendDate.jsp?bookingID=<%= rs.getString ("bookingID")%>&
+                   returndate=<%= rs.getString ("returnDate")%>&price=<%= rs.getString ("totalPrice")%>" 
+                   class="btn btn-outline-warning btn-lg btn-block"><B>EXTEND RETURN DATE</B></a>
             </div>
         </div>
             
