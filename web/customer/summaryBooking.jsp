@@ -223,11 +223,11 @@
                                 
                                 returnDate = rs.getString("returnDate");
                                 
-                                if (rs.getString("extendReturnDate")!= null){
-                                returnDate = rd;
+                                if (rs.getString("extendStatus").equals("APPROVED")){
+                                returnDate = erd;
                                 
                                 } else {
-                                returnDate =  erd;
+                                returnDate =  rd;
                                 }
                             %>
 
