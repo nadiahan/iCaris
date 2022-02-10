@@ -118,6 +118,7 @@
                             String password = "";
                             String vehicleID = null;
                             String _userid = (String) session.getAttribute("userID");
+                            String returnDate = null;
 
                         //int i=Integer.parseInt(request.getParameter("id"));
                         
@@ -148,14 +149,18 @@
                             ResultSet rs2 = ps2.executeQuery();
                             
                             float total = rs.getFloat("totalPrice")+rs.getFloat("extraFee");
-                                String returnDate = rs.getString ("returnDate");
+                            String rd = rs.getString("returnDate");
+                            String erd = rs.getString("extendReturnDate");  
                                 
+                                returnDate = rs.getString("returnDate");
                                 
                                 if (rs.getString("extendReturnDate")!= null){
-                                returnDate = rs.getString("extendReturnDate");
+                                returnDate = rd;
                                 
-                                } else
-                                returnDate =  rs.getString("returnDate");
+                                } else {
+                                returnDate =  erd;
+                                }
+                                
                             while(rs2.next()){
                             %>
         <div class="main-container">
@@ -190,6 +195,7 @@
                     <%;  }
 
                             else if (rs.getString("status").equals("Returned")) {%>
+                            
                             
                             <a class="btn btn-primary" href="feedback.jsp?bookingID=<%=rs.getString("bookingID")%>&vehicleID=<%=rs2.getString("vehicleID")%>" role="button" style="margin: 5px;">Give Fedback</a>
                             <%; } %>

@@ -94,12 +94,13 @@ public class addBooking extends HttpServlet {
             ps.setString(12, extendStatus);
             ps.setFloat(13, totalPrice);
             ps.setFloat(14, extraFee);
-            ps.executeUpdate();
-            
+            int bookCount = ps.executeUpdate();
+            session.setAttribute("bookCount", bookCount);
             ResultSet rs = ps.getGeneratedKeys();
             if (rs != null && rs.next()) {
                 B_ID = rs.getInt(1);
                  session.setAttribute("B_ID", B_ID);
+                 
                 }
             
             
@@ -137,6 +138,8 @@ public class addBooking extends HttpServlet {
             
             conn.close();
             //response.sendRedirect("viewAll.jsp");
+            
+            
             
         response.sendRedirect("customer/bookCar.jsp");
         } 

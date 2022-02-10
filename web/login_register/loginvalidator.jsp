@@ -20,6 +20,7 @@
             int count;
             int inqCount;
             int exist;
+            int bookCount;
         %>
 
 <%
@@ -87,6 +88,7 @@
                                     session.setAttribute("count", 0);
                                     session.setAttribute("inqCount", 0);
                                     session.setAttribute("exist", 1);
+                                    session.setAttribute("bookCount", 0);
                                     
                                    // out.println (name + pwd);
                                    
