@@ -180,6 +180,7 @@
                         String bookingID = request.getParameter("bookingID");
                         
                         String id = request.getParameter("id");
+                        String returnDate = null;
                         //int i=Integer.parseInt(request.getParameter("id"));
                         
                         
@@ -215,12 +216,19 @@
                             ResultSet rs2 = ps2.executeQuery();
                             while(rs2.next()){
                                 float total = rs.getFloat("totalPrice")+rs.getFloat("extraFee");
-                                String returnDate = rs.getString ("returnDate");
+                              //  String returnDate = rs.getString ("returnDate");
+                                
+                                String rd = rs.getString("returnDate");
+                                String erd = rs.getString("extendReturnDate");  
+                                
+                                returnDate = rs.getString("returnDate");
                                 
                                 if (rs.getString("extendReturnDate")!= null){
-                                returnDate = rs.getString("extendReturnDate");
-                                } else
-                                returnDate =  rs.getString("returnDate");
+                                returnDate = rd;
+                                
+                                } else {
+                                returnDate =  erd;
+                                }
                             %>
 
         <div class="header">

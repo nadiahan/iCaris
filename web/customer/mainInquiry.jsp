@@ -77,7 +77,7 @@
                 </div>
             </a>
             <div class="sizedBox1"></div>
-            <a  href="#">
+            <a  href="currentinquiry.jsp">
                 <div class="optionBtn current">
                     <img class="imgBtn" src="../img/list.svg" alt="Booking logo">
                     <p class="captionBtn">INQUIRY LIST</p>

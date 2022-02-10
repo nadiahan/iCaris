@@ -114,7 +114,7 @@
                                 <span class="rated">Service Tax</span><br>
                             </div>
                             <div class="col-md-3 col-xs-3">
-                                <div class="rating text-right"> <%= pf.format(rs.getFloat("price")*differenceInDays)%></div>
+                                <div class="rating text-right"> RM<%= pf.format(rs.getFloat("price")*differenceInDays)%></div>
                                 <span class="rated"><%= pf.format(rs.getFloat("price")*0.94*differenceInDays )%></span><br>
                                 <span class="rated"><%= pf.format(rs.getFloat("price")*0.06*differenceInDays ) %></span><br>
                             </div> 

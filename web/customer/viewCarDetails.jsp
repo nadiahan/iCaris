@@ -113,12 +113,11 @@
                         <div class="row">
                             <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Total</a> 
                                 <span class="rated">2 days rental</span><br>
-                                <span class="rated">Service Tax</span><br>
+                              
                             </div>
                             <div class="col-md-3 col-xs-3">
                                 <div class="rating text-right"> RM300.00</div>
-                                <span class="rated">RM282.00</span><br>
-                                <span class="rated">RM18.00</span><br>
+                          
                             </div>
                            
                         </div>

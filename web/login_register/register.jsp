@@ -48,6 +48,7 @@ and open the template in the editor.
         <div class ="kotakluar"
         
         <input type="text" name="fname" id="fname" placeholder="First Name" required="required" />
+        <input type="text" name="fname" id="fname" placeholder="First Name" required="required" />
         <input type="text" name="lname" id="lname" placeholder="Last Name" required="required" />
         <input type="text" name="nric" id="nric" placeholder="NRIC/Passport Number" required="required" />
         <input type="email" name="email" id="email" placeholder="Email Address" required="required" />

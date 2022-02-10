@@ -113,7 +113,7 @@
       %>
       <form action="../addFeedback">
     <div class="rating-css">
-    <div>Rate your experience<br>using html & css</div>
+    <div>Rate your experience<br>(On a scale 1-5)</div>
     <div class="star-icon">
       <input type="radio" name="rating1" id="rating1"  value="1">
       <label for="rating1" class="fa fa-star"></label>

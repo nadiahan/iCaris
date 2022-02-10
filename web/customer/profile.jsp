@@ -141,7 +141,7 @@
                             <div class="account-settings">
                                 <div class="user-profile">
 
-                                    <h5 class="user-name"><% out.print(_fname + " " + _lname + count);   %></h5>
+                                    <h5 class="user-name"><% out.print(_fname + " " + _lname);   %></h5>
                                     <h6 class="user-email"><% out.print(_email);   %></h6>
                                     <div class="user-avatar">
                                         <img src="https://merriam-webster.com/assets/mw/images/article/art-wap-article-main/egg-3442-e1f6463624338504cd021bf23aef8441@1x.jpg" alt="Maxwell Admin">

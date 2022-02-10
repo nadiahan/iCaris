@@ -51,7 +51,7 @@
 
             .imgCar{
                 height: 100px;
-                width: 150px;
+                width: auto;
 
             }
 
@@ -132,7 +132,7 @@
 
                             
                             
-                            String sqlselect = "SELECT * from booking WHERE userID ='"+_userid+"'";
+                            String sqlselect = "SELECT * from inquiry WHERE userID ='"+_userid+"'";
                             PreparedStatement ps = conn.prepareStatement(sqlselect);
    
                             ResultSet rs = ps.executeQuery();
@@ -141,42 +141,23 @@
                             
                        
                             while(rs.next()){
-                             vehicleID = rs.getString("vehicleID");
-                            
-                            String sqlselect2 = "select * from vehicle where vehicleID ='"+vehicleID+"'";
-                            PreparedStatement ps2 = conn.prepareStatement(sqlselect2);
-   
-                            ResultSet rs2 = ps2.executeQuery();
-                            
-                            float total = rs.getFloat("totalPrice")+rs.getFloat("extraFee");
-                            String rd = rs.getString("returnDate");
-                            String erd = rs.getString("extendReturnDate");  
-                                
-                                returnDate = rs.getString("returnDate");
-                                
-                                if (rs.getString("extendReturnDate")!= null){
-                                returnDate = rd;
-                                
-                                } else {
-                                returnDate =  erd;
-                                }
-                                
-                            while(rs2.next()){
+                             
+                         
                             %>
         <div class="main-container">
-            <a href="summaryBooking.jsp?vehicleID=<%=rs2.getString("vehicleID")%>&bookingID=<%=rs.getString("bookingID")%>">
+            <a href="summaryInquiry.jsp?inquiryID=<%=rs.getString("inquiryID")%>">
                 <div class="booking-card">
                     
                     <div class="left-side">
-                        
-                    <img class="imgCar" src="../view_image.jsp?vehicleID=<%=rs.getString("vehicleID")%>" alt="Car picture">
+                    <img class="imgCar" src="https://icons-for-free.com/iconfiles/png/512/search+view+icon-1320087276525986751.png" alt="Car picture">    
+                    
                     <div class="sizedBox1"></div>
 
                     <div class="textPart">
 
                         <ul class="cardDesc">
-                            <li class="carName"><%= rs2.getString("brand")%><%out.print(" ");%><%= rs2.getString("model") %></li>
-                            <li class="bookingId">Booking Ref : IC<%= rs.getString("bookingID")%></li>
+                            <li class="carName"><%= rs.getString("title")%>  </li>
+                            <li class="bookingId">Inquiry Ref : INQ<%= rs.getString("inquiryID")%></li>
                         </ul>
 
 
@@ -186,19 +167,14 @@
                     </div>
 
 
-                            <% 
                             
-                    if (rs.getString("status").equals("Booked")){%>
+                            
+                    
 <!--                    <div class="sizedBox2"></div>-->
-                    <p class="pickupDate"><%=returnDate%></p>
-                             
-                    <%;  }
+                    <p class="pickupDate"><%= rs.getString("date")%></p>
+              
 
-                            else if (rs.getString("status").equals("COMPLETED")) {%>
                             
-                            
-                            <a class="btn btn-primary" href="feedback.jsp?bookingID=<%=rs.getString("bookingID")%>&vehicleID=<%=rs2.getString("vehicleID")%>" role="button" style="margin: 5px;">Give Fedback</a>
-                            <%; } %>
                              
 
 
@@ -209,7 +185,7 @@
         <%;
         
                             }
-                          }
+                          
        
                         }
                         catch(Exception ex) {

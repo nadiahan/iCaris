@@ -51,7 +51,7 @@
   <form action="../addInquiry" method="post">
       <h3>Inquiry Form</h3>
       <div class="container2">
-          <label for="fname">Name <%= inqCount%></label>
+          <label for="fname">Name</label>
           <input type="text" id="name" name="name" value="<% out.print(fname + " " + lname);   %>" disabled>
 
         <label for="lname">Title</label>

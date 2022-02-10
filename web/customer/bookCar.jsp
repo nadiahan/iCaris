@@ -29,6 +29,7 @@
                         String database = "rentalproject";
                         String userid = "root";
                         String password = "";
+                        String test = null;
                       //  int A_ID= Integer.parseInt(session.getAttribute("A_ID").toString());
                         
                         //String id = " ";
@@ -51,13 +52,7 @@
                             PreparedStatement ps2 = conn.prepareStatement(sqlselect2);
    
                             ResultSet rs2 = ps2.executeQuery();
-                            
-                           
-                
-                            
-                            int j = 0;
-                            
-                            String test = null;
+                  
                             while(rs2.next()){
                              test = rs2.getString("vehicleID");
                                 
@@ -78,12 +73,26 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                             </div>
-                            <span><%=rs.getString("transmission")%></span>
+                            
                         </div>
                         <div class="mt-1 mb-1 spec-1">
                             <span><%= rs.getString("seats") %>&nbsp;seater</span>
                             <span class="dot"></span>
+                            <span><%= rs.getString("trunkSize") %>&nbsp;</span>
+                            <span class="dot"></span>
+                            <span><%=rs.getString("transmission")%>&nbsp;Transmission</span>
+                             
+                           
+                            
                         </div>
+                            <div class="mt-1 mb-1 spec-1">
+                          <span class="dot"></span>
+                            <span><%=rs.getString("age")%>&nbsp;years</span>
+                            <span class="dot"></span>
+                            <span><%=rs.getString("colour")%>&nbsp;colour</span>
+                            
+                        </div>
+                            
                     </div>
                     <div class="align-items-center align-content-center col-md-3 border-left mt-1">
                         <div class="d-flex flex-row align-items-center">
@@ -117,14 +126,29 @@
                                     <div class="bottom-wrap-payment">
                                         <figcaption class="info-wrap">
                                             <div class="row">
-                                                <div class="col-md-9 col-xs-9"> <a href="#" class="title" data-abc="true">Total</a> 
-                                                    <span class="rated">2 days rental</span><br>
-                                                    <span class="rated">Service Tax</span><br>
+                                                <div class="col-md-9 col-xs-9"> 
+                                                    <a href="#" class="title" data-abc="true">Rental Price</a> 
                                                 </div>
                                                 <div class="col-md-3 col-xs-3">
-                                                    <div class="rating text-right"> RM300.00</div>
-                                                    <span class="rated">RM282.00</span><br>
-                                                    <span class="rated">RM18.00</span><br>
+                                                    <div class="rating text-right"> RM<%= rs.getString("price")%>/day</div>
+                                                </div>
+                                                <div class="col-md-9 col-xs-9"> 
+                                                    <a href="#" class="title" data-abc="true">Seat Capacity</a> 
+                                                </div>
+                                                <div class="col-md-3 col-xs-3">
+                                                    <div class="rating text-right"> <%= rs.getString("seats")%>&nbsp;persons</div>
+                                                </div>
+                                                <div class="col-md-9 col-xs-9"> 
+                                                    <a href="#" class="title" data-abc="true">Colour</a> 
+                                                </div>
+                                                <div class="col-md-3 col-xs-3">
+                                                    <div class="rating text-right"> <%= rs.getString("colour") %>&nbsp;color</div>
+                                                </div>
+                                                <div class="col-md-9 col-xs-9"> 
+                                                    <a href="#" class="title" data-abc="true">Roadtax Expiry</a> 
+                                                </div>
+                                                <div class="col-md-3 col-xs-3">
+                                                    <div class="rating text-right"> <%= rs.getString("rdTaxExpiry") %>&nbsp;color</div>
                                                 </div>
 
                                             </div>
